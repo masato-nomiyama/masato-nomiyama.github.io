@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     'main': [
       'babel-polyfill',
-      path.resolve(__dirname, 'src', 'js', 'main.js'),
+      path.resolve(__dirname, 'src', 'js', 'main.jsx'),
     ],
   },
   output: {
@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     extensions: [
       '.js',
+      '.jsx',
     ]
   },
   module: {
@@ -34,6 +35,7 @@ module.exports = {
               'es2016',
               'es2017',
               'stage-3',
+              'react',
             ],
           },
         }],
