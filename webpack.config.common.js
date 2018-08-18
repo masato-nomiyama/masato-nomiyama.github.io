@@ -63,6 +63,26 @@ module.exports = {
           }),
         ],
       },
+      {
+        test: /\.styl$/,
+        exclude: /node_modules/,
+        use: [
+          'css-hot-loader',
+          ...ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: { sourceMap: true },
+              },
+              {
+                loader: 'stylus-loader',
+                options: { sourceMap: true },
+              },
+            ],
+          }),
+        ],
+      },
     ],
   },
   plugins: [
