@@ -1,4 +1,79 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
-html, body
-  background-color #FAFAFA
+html, body, #root
+  height 100%
+  margin 0
+  background-color white
+  scroll-behavior smooth
+
+a
+  text-decoration none
+  color none
+
+.home
+  height 100%
+
+  .menu
+    height 100%
+    width 200px
+    padding 48px 36px
+    position fixed
+
+    &-header
+      margin 0 0 48px
+
+      &-logo
+        height 60px
+        margin 0 0 12px
+
+    &-content
+      &-item
+        padding 4px 0
+
+        &-text
+          opacity 1
+          transition opacity 0.4s ease
+        &-line
+          height 1px
+          position absolute
+          right 36px
+          width 0px
+          opacity 0
+          transition width 0.4s ease, opacity 0.4s ease
+
+      &-item:hover .menu-content-item
+        &-text
+          opacity 0.25
+          transition opacity 0.2s ease
+        &-line
+          left 36px
+          width 200px
+          opacity 1
+          transition width 0.2s ease, opacity 0.2s ease
+
+  .container
+    height 2000px
+    width calc(100% - 216px - 72px - 96px)
+    padding 48px
+    position absolute
+    right 0px
+
+    &-item-title-line
+      height 1px
+      width 240px
+
+@keyframes crossin
+  0%
+    width 0px
+    opacity 0
+  100%
+    width 200px
+    opacity 1
+
+@keyframes crossout
+  0%
+    width 200px
+    opacity 1
+  100%
+    width 0px
+    opacity 0
