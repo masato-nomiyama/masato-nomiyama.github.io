@@ -7,17 +7,29 @@ import Typography from '@material-ui/core/Typography'
 import { theme } from '../theme'
 import logo from '../../img/logo.png'
 
-const styles = theme => ({
-  title: {
-    color: theme.palette.primary.dark,
-    letterSpacing: '2.5px',
-  },
-  body2: {
-    color: theme.palette.primary.main,
-    fontVariantLigatures: 'none',
-    letterSpacing: '1.5px',
+const styles = theme => {
+  return {
+    line: {
+      background: `linear-gradient(
+        45deg,
+        ${theme.palette.secondary.A200},
+        ${theme.palette.secondary.A400}
+      )`
+    },
+    background: {
+      backgroundColor: theme.palette.primary[50],
+    },
+    titleText: {
+      color: '#000',
+      letterSpacing: '2.5px',
+    },
+    menuText: {
+      color: theme.palette.primary[800],
+      fontVariantLigatures: 'none',
+      letterSpacing: '1.5px',
+    },
   }
-})
+}
 
 class Menu extends PureComponent {
   renderItem({ text }) {
@@ -25,18 +37,19 @@ class Menu extends PureComponent {
       <a href={`#${text}`} className='menu-content-item'>
         <div className='menu-content-item'>
           <Typography
-            className={`${this.props.classes.body2} menu-content-item-text`}
+            className={[
+              this.props.classes.menuText,
+              'menu-content-item-text',
+            ].join(' ')}
             variant='body2'
           >
             {text}
           </Typography>
           <div
-            className='menu-content-item-line'
-            style={{background: `linear-gradient(
-              45deg,
-              ${theme.palette.secondary.light},
-              ${theme.palette.secondary.main}
-            )`}}
+            className={[
+              this.props.classes.line,
+              'menu-content-item-line',
+            ].join(' ')}
           />
         </div>
       </a>
@@ -46,8 +59,10 @@ class Menu extends PureComponent {
   render() {
     return (
       <div
-        className={this.props.className}
-        style={{ backgroundColor: theme.palette.primary.light }}
+        className={[
+          this.props.classes.background,
+          this.props.className,
+        ].join(' ')}
       >
         <a href='index.html'>
           <div className='menu-header'>
@@ -57,7 +72,7 @@ class Menu extends PureComponent {
               alt='Masato Nomiyama'
             />
             <Typography
-              className={this.props.classes.title}
+              className={this.props.classes.titleText}
               variant='title'
             >
               Masato Nomiyama
@@ -65,10 +80,11 @@ class Menu extends PureComponent {
           </div>
         </a>
         <div className='menu-content'>
-          {this.renderItem({ url: 'index.html', text: 'profile' })}
-          {this.renderItem({ url: 'index.html', text: 'biography' })}
-          {this.renderItem({ url: 'index.html', text: 'works' })}
-          {this.renderItem({ url: 'index.html', text: 'achievements' })}
+          {this.renderItem({ text: 'profile' })}
+          {this.renderItem({ text: 'biography' })}
+          {this.renderItem({ text: 'works' })}
+          {this.renderItem({ text: 'achievements' })}
+          {this.renderItem({ text: 'contact' })}
         </div>
       </div>
     )

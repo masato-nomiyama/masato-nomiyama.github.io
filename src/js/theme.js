@@ -1,21 +1,13 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 import { createMuiTheme } from '@material-ui/core/styles'
+import cyan from '@material-ui/core/colors/cyan'
+import grey from '@material-ui/core/colors/grey'
 
 export const theme = createMuiTheme({
   palette: {
-    primary: {
-      light: '#FAFAFA',
-      main: '#424242',
-      dark: '#000000',
-      contrastText: '#FFFFFF',
-    },
-    secondary: {
-      light: '#18FFFF',
-      main: '#00E5FF',
-      dark: '#00B8D4',
-      contrastText: '#000000',
-    },
+    primary: grey,
+    secondary: cyan,
   },
   typography: {
     fontFamily: [
@@ -29,13 +21,13 @@ export const theme = createMuiTheme({
       'Arial',
       'sans-serif',
     ].join(','),
-    'display1': {
+    display1: {
       fontSize: '1.4em',
     },
-    'title': {
+    title: {
       fontSize: '1.05em',
     },
-    'body2': {
+    body2: {
       fontSize: '0.85em',
     },
   },
