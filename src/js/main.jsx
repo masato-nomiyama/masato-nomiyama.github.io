@@ -6,12 +6,12 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import '../css/main.styl'
 import { theme } from './theme'
-import Home from './component/Home'
+import App from './container/App'
 
 function main() {
   ReactDOM.render(
     <MuiThemeProvider theme={theme}>
-      <Home/>
+      <App />
     </MuiThemeProvider>,
     document.getElementById('root')
   )

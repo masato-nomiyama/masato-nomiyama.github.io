@@ -4,26 +4,20 @@ import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import { theme } from '../theme'
+import { style, theme } from '../theme'
 import logo from '../../img/logo.png'
 
-const styles = theme => {
+const menuStyle = theme => {
   return {
-    line: {
-      background: `linear-gradient(
-        45deg,
-        ${theme.palette.secondary.A200},
-        ${theme.palette.secondary.A400}
-      )`
-    },
+    ...style,
     background: {
-      backgroundColor: theme.palette.primary[50],
+      backgroundColor: theme.palette.background.default,
     },
-    titleText: {
+    menuTitle: {
       color: '#000',
       letterSpacing: '2.5px',
     },
-    menuText: {
+    menuList: {
       color: theme.palette.primary[800],
       fontVariantLigatures: 'none',
       letterSpacing: '1.5px',
@@ -32,14 +26,14 @@ const styles = theme => {
 }
 
 class Menu extends PureComponent {
-  renderItem({ text }) {
+  renderListItem({ text }) {
     return (
-      <a href={`#${text}`} className='menu-content-item'>
-        <div className='menu-content-item'>
+      <a href={`#${text}`}>
+        <div className='menu-list-item'>
           <Typography
             className={[
-              this.props.classes.menuText,
-              'menu-content-item-text',
+              this.props.classes.menuList,
+              'menu-list-item-text',
             ].join(' ')}
             variant='body2'
           >
@@ -48,7 +42,7 @@ class Menu extends PureComponent {
           <div
             className={[
               this.props.classes.line,
-              'menu-content-item-line',
+              'menu-list-item-line',
             ].join(' ')}
           />
         </div>
@@ -64,31 +58,31 @@ class Menu extends PureComponent {
           this.props.className,
         ].join(' ')}
       >
-        <a href='index.html'>
-          <div className='menu-header'>
+        <a href=''>
+          <div className='menu-title'>
             <img
-              className='menu-header-logo'
+              className='menu-title-logo'
               src={logo}
               alt='Masato Nomiyama'
             />
             <Typography
-              className={this.props.classes.titleText}
+              className={this.props.classes.menuTitle}
               variant='title'
             >
               Masato Nomiyama
             </Typography>
           </div>
         </a>
-        <div className='menu-content'>
-          {this.renderItem({ text: 'profile' })}
-          {this.renderItem({ text: 'biography' })}
-          {this.renderItem({ text: 'works' })}
-          {this.renderItem({ text: 'achievements' })}
-          {this.renderItem({ text: 'contact' })}
+        <div className='menu-list'>
+          {this.renderListItem({ text: 'profile' })}
+          {this.renderListItem({ text: 'biography' })}
+          {this.renderListItem({ text: 'works' })}
+          {this.renderListItem({ text: 'achievements' })}
+          {this.renderListItem({ text: 'contact' })}
         </div>
       </div>
     )
   }
 }
 
-export default withStyles(styles)(Menu)
+export default withStyles(menuStyle)(Menu)

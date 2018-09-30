@@ -2,15 +2,15 @@
 
 import React, { PureComponent } from 'react'
 
-import Container from './Container'
+import Home from './Home'
 import Menu from './Menu'
 
-export default class Home extends PureComponent {
+export default class App extends PureComponent {
   render() {
     return (
-      <div className='home'>
+      <div id='app'>
         <Menu className='menu' />
-        <Container className='container' />
+        <Home className='home' />
       </div>
     )
   }

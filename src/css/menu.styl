@@ -1,0 +1,38 @@
+// Copyright (C) 2018-Present Masato Nomiyama
+
+.menu
+  height 100%
+  width var(--menu-width)
+  padding 0 var(--menu-left)
+  position fixed
+
+  &-title
+    margin 48px 0
+
+    &-logo
+      height 60px
+      margin 0 0 12px
+
+  &-list
+    &-item
+      padding 3px 0
+
+      &-text
+        opacity 1
+        transition opacity 0.4s ease
+      &-line
+        position absolute
+        right var(--menu-left)
+        width 0px
+        opacity 0
+        transition width 0.4s ease, opacity 0.4s ease
+
+    &-item:hover .menu-list-item
+      &-text
+        opacity 0.25
+        transition opacity 0.2s ease
+      &-line
+        left var(--menu-left)
+        width var(--menu-width)
+        opacity 1
+        transition width 0.2s ease, opacity 0.2s ease

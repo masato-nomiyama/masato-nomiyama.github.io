@@ -21,8 +21,20 @@ export const theme = createMuiTheme({
       'Arial',
       'sans-serif',
     ].join(','),
+    display4: {
+      fontSize: '2em',
+    },
+    display3: {
+      fontSize: '1.8em',
+    },
+    display2: {
+      fontSize: '1.6em',
+    },
     display1: {
       fontSize: '1.4em',
+    },
+    headline: {
+      fontSize: '1.2em',
     },
     title: {
       fontSize: '1.05em',
@@ -30,5 +42,25 @@ export const theme = createMuiTheme({
     body2: {
       fontSize: '0.85em',
     },
+    body1: {
+      fontSize: '0.85em',
+    },
+    caption: {
+      fontSize: '0.7em',
+    },
+    button: {
+      fontSize: '0.85em',
+    },
   },
 })
+
+export const style = {
+  line: {
+    background: `linear-gradient(
+      90deg,
+      ${theme.palette.secondary.A200},
+      ${theme.palette.secondary.A400}
+    )`,
+    height: '1px',
+  },
+}

@@ -1,0 +1,40 @@
+// Copyright (C) 2018-Present Masato Nomiyama
+
+.home
+  height 2000px
+  width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--home-left)*2)
+  padding 0 var(--home-left)
+  position absolute
+  right 0px
+
+  &-item
+    padding 48px 0
+
+  &-header
+    &-line
+      margin 3px 0
+      position absolute
+      opacity 0
+
+.home-item:target .home
+  &-header
+    &-line
+      animation-name crossInOut
+      animation-duration 1s
+      animation-delay 0.1s
+      animation-timing-function ease-in-out
+      animation-fill-mode forwards
+
+@keyframes crossInOut
+  0%
+    left var(--home-left)
+    width 0px
+    opacity 0
+  50%
+    right var(--home-left)
+    width calc(100% - var(--home-left)*2)
+    opacity 1
+  100%
+    right var(--home-left)
+    width 0px
+    opacity 0
