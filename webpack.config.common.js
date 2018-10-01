@@ -99,6 +99,11 @@ module.exports = {
         from: 'favicon.ico',
         to: '',
       },
+      {
+        context: path.resolve(__dirname, 'src'),
+        from: 'CNAME',
+        to: '',
+      },
     ]),
     new ExtractTextPlugin('[name].css', {
       allChunks: true,
