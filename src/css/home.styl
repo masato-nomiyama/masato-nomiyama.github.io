@@ -3,14 +3,14 @@
 .home
   height 2000px
   width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--home-left)*2)
-  padding 0 calc(var(--home-left)) 0 calc(
+  padding 48px calc(var(--home-left)) 48px calc(
     var(--menu-left)*2 + var(--menu-width) + var(--home-left))
 
   &-item
-    padding 60px 0
+    padding 0 0 24px
 
   &-header
-    padding 0 0 48px
+    margin 36px 0
 
 .home-item:target .home
   &-header
@@ -45,9 +45,19 @@
     opacity 1
 
 .profile
+  margin 36px 0
+
   &-item
-    padding 0 0 16px
+    margin 36px 0
 
   &-image
-    margin 12px 0
-    width 100%
+    width 600px
+
+.works
+  margin 36px 0
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+
+  &-card
+    margin 18px 0

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
 import Profile from '../component/Profile'
+import Works from '../component/Works'
 
 const homeStyle = theme => {
   return {
@@ -52,7 +53,7 @@ class Home extends PureComponent {
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div />
+            <Works className={header} />
           </div>
         )
       case 'biography':

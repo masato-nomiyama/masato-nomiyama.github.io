@@ -31,7 +31,7 @@ class Profile extends PureComponent {
           なぜあの人を信頼できるのか<br/>
           <br/>
           こうした仕組みを紐解くことで人の行動をデザインし<br/>
-          誰もが「好き」に夢中になれる未来を作ります<br/>
+          誰もが「好き」に夢中になれる未来を作ります
         </Typography>
       </div>
     )

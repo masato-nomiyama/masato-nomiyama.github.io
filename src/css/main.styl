@@ -5,15 +5,19 @@
 
 html, body, #root, #app
   height 100%
-  max-width 960px
+  max-width 1080px
   margin auto
   background-color white
   scroll-behavior smooth
 
   --menu-width 200px
-  --menu-left 36px
-  --home-left 36px
+  --menu-left 40px
+  --home-left 48px
 
 a
   text-decoration none
   color none
+
+.copyright
+  padding 36px calc(var(--home-left)) 36px calc(
+    var(--menu-left)*2 + var(--menu-width) + var(--home-left))

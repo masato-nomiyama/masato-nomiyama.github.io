@@ -38,15 +38,15 @@ export const theme = createMuiTheme({
     },
     title: {
       color: grey[800],
-      fontSize: '0.9em',
+      fontSize: '0.95em',
       fontWeight: 'bold',
     },
     body2: {
       color: grey[600],
-      fontSize: '0.8em',
+      fontSize: '0.85em',
     },
     body1: {
-      fontSize: '0.8em',
+      fontSize: '0.85em',
       textAlign: 'right',
     },
     caption: {
