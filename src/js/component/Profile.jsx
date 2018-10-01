@@ -47,7 +47,7 @@ class Profile extends PureComponent {
         />
         <Typography className={this.props.classes.name} variant='body2'>
           野見山 真人　Design Engineer<br/>
-          東京大学 情報理工学系研究科 知能機械情報学 修士
+          東京大学 情報理工学系研究科 知能機械情報学 修士修了
         </Typography>
       </div>
     )
