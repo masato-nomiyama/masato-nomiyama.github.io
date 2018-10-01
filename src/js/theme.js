@@ -34,19 +34,23 @@ export const theme = createMuiTheme({
       fontSize: '1.4em',
     },
     headline: {
-      fontSize: '1.2em',
+      fontSize: '1.15em',
     },
     title: {
-      fontSize: '1.05em',
+      color: grey[800],
+      fontSize: '0.9em',
+      fontWeight: 'bold',
     },
     body2: {
-      fontSize: '0.85em',
+      color: grey[600],
+      fontSize: '0.8em',
     },
     body1: {
-      fontSize: '0.85em',
+      fontSize: '0.8em',
+      textAlign: 'right',
     },
     caption: {
-      fontSize: '0.7em',
+      fontSize: '0.75em',
     },
     button: {
       fontSize: '0.85em',
@@ -61,6 +65,7 @@ export const style = {
       ${theme.palette.secondary.A200},
       ${theme.palette.secondary.A400}
     )`,
+    margin: '2px 0 0',
     height: '1px',
   },
 }

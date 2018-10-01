@@ -3,38 +3,51 @@
 .home
   height 2000px
   width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--home-left)*2)
-  padding 0 var(--home-left)
-  position absolute
-  right 0px
+  padding 0 calc(var(--home-left)) 0 calc(
+    var(--menu-left)*2 + var(--menu-width) + var(--home-left))
 
   &-item
-    padding 48px 0
+    padding 60px 0
 
   &-header
-    &-line
-      margin 3px 0
-      position absolute
-      opacity 0
+    padding 0 0 48px
 
 .home-item:target .home
   &-header
     &-line
       animation-name crossInOut
-      animation-duration 1s
-      animation-delay 0.1s
-      animation-timing-function ease-in-out
+      animation-duration 1.2s
+      animation-delay 0.6s
+      animation-timing-function ease
       animation-fill-mode forwards
 
 @keyframes crossInOut
   0%
-    left var(--home-left)
-    width 0px
-    opacity 0
-  50%
-    right var(--home-left)
-    width calc(100% - var(--home-left)*2)
+    margin-left auto
+    margin-right 0
+    width 100%
     opacity 1
-  100%
-    right var(--home-left)
+  45%
+    margin-left auto
+    margin-right 0
     width 0px
-    opacity 0
+    opacity 0.2
+  46%
+    margin-left 0
+    margin-right auto
+  55%
+    width 0px
+    opacity 0.2
+  100%
+    margin-left 0
+    margin-right auto
+    width 100%
+    opacity 1
+
+.profile
+  &-item
+    padding 0 0 16px
+
+  &-image
+    margin 12px 0
+    width 100%

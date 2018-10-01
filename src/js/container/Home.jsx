@@ -4,12 +4,13 @@ import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import { style, theme } from '../theme'
+import { style } from '../theme'
+import Profile from '../component/Profile'
 
 const homeStyle = theme => {
   return {
     ...style,
-    homeHeader: {
+    header: {
       color: theme.palette.primary[800],
       fontVariantLigatures: 'none',
       letterSpacing: '1.8px',
@@ -22,8 +23,8 @@ class Home extends PureComponent {
     return (
       <div className='home-header'>
         <Typography
-          className={this.props.classes.homeHeader}
-          variant='title'
+          className={this.props.classes.header}
+          variant='headline'
         >
           {header}
         </Typography>
@@ -42,38 +43,42 @@ class Home extends PureComponent {
     switch(header) {
       case 'profile':
         return (
-          <div className={className} id={`${header}`}>
+          <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div />
+            <Profile className={header} />
           </div>
         )
       case 'works':
         return (
-          <div className={className} id={`${header}`}>
+          <div className={className} id={header}>
             {this.renderHeader({ header })}
             <div />
           </div>
         )
       case 'biography':
         return (
-          <div className={className} id={`${header}`}>
+          <div className={className} id={header}>
             {this.renderHeader({ header })}
             <div />
           </div>
         )
       case 'achievements':
         return (
-          <div className={className} id={`${header}`}>
+          <div className={className} id={header}>
             {this.renderHeader({ header })}
             <div />
           </div>
         )
       case 'contact':
         return (
-          <div className={className} id={`${header}`}>
+          <div className={className} id={header}>
             {this.renderHeader({ header })}
             <div />
           </div>
+        )
+      default:
+        return (
+          <div />
         )
     }
   }
@@ -82,8 +87,8 @@ class Home extends PureComponent {
     return (
       <div className={this.props.className}>
        {this.renderItem({ header: 'profile' })}
-       {this.renderItem({ header: 'biography' })}
        {this.renderItem({ header: 'works' })}
+       {this.renderItem({ header: 'biography' })}
        {this.renderItem({ header: 'achievements' })}
        {this.renderItem({ header: 'contact' })}
       </div>
