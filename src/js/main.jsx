@@ -8,7 +8,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import '../css/main.styl'
 import { theme } from './theme'
 import App from './container/App'
-import ExclusiveWorks from './container/ExclusiveWorks'
+import ExclusiveWorks from './router/ExclusiveWorks'
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>

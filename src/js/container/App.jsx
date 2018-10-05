@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 
 import Exception from '../component/Exception'
-import InclusiveWorks from './InclusiveWorks'
+import InclusiveWorks from '../router/InclusiveWorks'
 import Home from './Home'
 import Menu from './Menu'
 

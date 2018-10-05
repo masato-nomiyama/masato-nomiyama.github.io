@@ -1,4 +1,6 @@
-import React, { PureComponent } from 'react'
+// Copyright (C) 2018-Present Masato Nomiyama
+
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
@@ -33,51 +35,49 @@ const cardStyle = theme => {
   }
 }
 
-class WorksCard extends PureComponent {
-  render() {
-    const {
-      classes,
-      className,
-      image,
-      title,
-      caption,
-      keywords,
-      onClick,
-    } = this.props
-    return (
-      <Card
-        className={[
-            className,
-            classes.card,
-          ].join(' ')}
-        elevation={0}
+const WorksCard = props => {
+  const {
+    classes,
+    className,
+    image,
+    title,
+    caption,
+    keywords,
+    onClick,
+  } = props
+  return (
+    <Card
+      className={[
+          className,
+          classes.card,
+        ].join(' ')}
+      elevation={0}
+    >
+      <CardActionArea
+        className={classes.actionArea}
+        onClick={onClick}
       >
-        <CardActionArea
-          className={classes.actionArea}
-          onClick={onClick}
-        >
-          <CardMedia
-            component='img'
-            alt={title}
-            className={classes.media}
-            image={image}
-            title={title}
-          />
-        <CardContent className={classes.content}>
-            <Typography variant='display1'>
-              {title}
-            </Typography>
-            <Typography variant='body2' className={classes.caption}>
-              {caption}
-            </Typography>
-            <Typography variant='caption'>
-              {keywords.join('/')}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    )
-  }
+        <CardMedia
+          component='img'
+          alt={title}
+          className={classes.media}
+          image={image}
+          title={title}
+        />
+      <CardContent className={classes.content}>
+          <Typography variant='display1'>
+            {title}
+          </Typography>
+          <Typography variant='body2' className={classes.caption}>
+            {caption}
+          </Typography>
+          <Typography variant='caption'>
+            {keywords.join('/')}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  )
 }
 
 export default withStyles(cardStyle)(WorksCard)
