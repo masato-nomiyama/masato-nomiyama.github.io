@@ -2,6 +2,7 @@
 
 import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
@@ -28,7 +29,7 @@ const menuStyle = theme => {
 class Menu extends PureComponent {
   renderTitle() {
     return (
-      <a href=''>
+      <Link to='/'>
         <div className='menu-title'>
           <img
             className='menu-title-logo'
@@ -42,13 +43,13 @@ class Menu extends PureComponent {
             Masato Nomiyama
           </Typography>
         </div>
-      </a>
+      </Link>
     )
   }
 
   renderListItem({ text }) {
     return (
-      <a href={`#${text}`}>
+      <Link to={text}>
         <div className='menu-list-item'>
           <Typography
             className={[
@@ -66,7 +67,7 @@ class Menu extends PureComponent {
             ].join(' ')}
           />
         </div>
-      </a>
+      </Link>
     )
   }
 

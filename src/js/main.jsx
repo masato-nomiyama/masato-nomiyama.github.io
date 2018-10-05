@@ -8,13 +8,13 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import '../css/main.styl'
 import { theme } from './theme'
 import App from './container/App'
-import ExclusiveWorks from './router/ExclusiveWorks'
+import Xnavi from './container/Xnavi'
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <HashRouter hashType='noslash'>
       <Switch>
-        <Route path='/works' component={ExclusiveWorks} />
+        <Route exact path='/works/xnavi' component={Xnavi} />
         <Route component={App} />
       </Switch>
     </HashRouter>

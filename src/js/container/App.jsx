@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 
 import Exception from '../component/Exception'
-import InclusiveWorks from '../router/InclusiveWorks'
 import Home from './Home'
 import Menu from './Menu'
 
@@ -27,7 +26,14 @@ export default class App extends PureComponent {
               ].join('|')})`}
               render={props => <Home className='home' {...props} />}
             />
-            <Route path='/works' component={InclusiveWorks}/>
+            <Route
+              path='/works'
+              render={props => (
+                <Switch>
+                  <Route component={Exception} />
+                </Switch>
+              )}
+            />
             <Route component={Exception} />
           </Switch>
           <Typography className='copyright' variant='caption'>
