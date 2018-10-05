@@ -17,10 +17,10 @@ const cardStyle = theme => {
       fontSize: '100%',
     },
     card: {
-      maxWidth: 336,
+      maxWidth: 316,
     },
     media: {
-      height: 252,
+      height: 237,
       objectFit: 'cover',
     },
     content: {

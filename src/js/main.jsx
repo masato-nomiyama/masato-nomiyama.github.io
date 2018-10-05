@@ -2,19 +2,22 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import '../css/main.styl'
 import { theme } from './theme'
 import App from './container/App'
+import ExclusiveWorks from './container/ExclusiveWorks'
 
-function main() {
-  ReactDOM.render(
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>,
-    document.getElementById('root')
-  )
-}
-
-main()
+ReactDOM.render(
+  <MuiThemeProvider theme={theme}>
+    <HashRouter hashType='noslash'>
+      <Switch>
+        <Route path='/works' component={ExclusiveWorks} />
+        <Route component={App} />
+      </Switch>
+    </HashRouter>
+  </MuiThemeProvider>,
+  document.getElementById('root')
+)

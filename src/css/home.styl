@@ -1,21 +1,17 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 .home
-  width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--home-left)*2)
-  padding 36px calc(var(--home-left)) 36px calc(
-    var(--menu-left)*2 + var(--menu-width) + var(--home-left))
-
   &-item
-    padding 24px 0
+    padding 20px 0
 
   &-header
-    margin 36px 0
+    margin 20px 0
 
 .home-item:target .home
   &-header
     &-line
       animation-name crossInOut
-      animation-duration 1.2s
+      animation-duration 1.0s
       animation-delay 0.4s
       animation-timing-function ease-in-out
       animation-fill-mode forwards

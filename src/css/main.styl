@@ -2,22 +2,32 @@
 
 @import 'menu'
 @import 'home'
+@import 'xnavi'
 
 html, body, #root, #app
   height 100%
-  max-width 1080px
   margin auto
   background-color white
   scroll-behavior smooth
 
   --menu-width 200px
   --menu-left 40px
-  --home-left 48px
+  --content-left 48px
+
+#app
+  max-width 1024px
 
 a
   text-decoration none
   color none
 
-.copyright
-  padding 36px calc(var(--home-left)) 36px calc(
-    var(--menu-left)*2 + var(--menu-width) + var(--home-left))
+.content
+  width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--content-left)*2)
+  padding 0 var(--content-left) 36px calc(var(--menu-left)*2 + var(--menu-width) + var(--content-left))
+
+.content-wide
+  width calc(100% - var(--content-left)*2)
+  padding 0 var(--content-left) 36px var(--content-left)
+
+.exception
+  padding 40px 0

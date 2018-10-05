@@ -43,17 +43,17 @@ export const theme = createMuiTheme({
     },
     body2: {
       color: grey[600],
-      fontSize: '0.85em',
+      fontSize: '0.8em',
     },
     body1: {
-      fontSize: '0.85em',
+      fontSize: '0.8em',
       textAlign: 'right',
     },
     caption: {
-      fontSize: '0.75em',
+      fontSize: '0.7em',
     },
     button: {
-      fontSize: '0.85em',
+      fontSize: '0.8em',
     },
   },
 })
