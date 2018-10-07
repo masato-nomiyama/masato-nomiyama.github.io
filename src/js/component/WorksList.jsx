@@ -3,7 +3,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import xnavi from '../../img/Xnavi.jpg'
+import xnavi from '../../img/xnavi.jpg'
 import WorksCard from './WorksCard'
 
 const WorksList = props => {

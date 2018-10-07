@@ -14,11 +14,15 @@ html, body, #root, #app
   --menu-left 40px
   --content-left 48px
 
+#app
+  max-width 1024px
+
 a
   text-decoration none
   color none
 
 .content
+  max-width 1024px
   width calc(100% - var(--menu-width) - var(--menu-left)*2 - var(--content-left)*2)
   padding 0 var(--content-left) 36px calc(var(--menu-left)*2 + var(--menu-width) + var(--content-left))
 
