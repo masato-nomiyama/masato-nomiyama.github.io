@@ -1,18 +1,24 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 .xnavi
+  --header-height 64px
+  --copy-padding 24px
+  --max-width 85%
+
   &-visual
-    height 696px
+    height 744px
     width 100%
     background-size cover
     background url('../img/xnavi-background.png') no-repeat center
     display flex
+    flex-wrap wrap
     justify-content center
     align-items center
+    align-content center
 
     &-copy
       margin 12px
-      padding 24px
+      padding var(--copy-padding)
       width 350px
       border-radius 10px
 
@@ -24,7 +30,7 @@
       height 350px
 
   &-page
-    height 760px
+    height 810px
     width 100%
     display flex
     flex-direction column
@@ -32,18 +38,53 @@
     align-items center
 
     &-title
-      padding 0 0 18px
+      padding 0 18px 18px
+
+    &-body
+      max-width var(--max-width)
+      padding 3px
 
     &-image
-      height 160px
+      width 525px
       margin 36px
 
-    &-logo
-      height 40px
-      margin 0 30px 36px
+    &-movie
+      width 600px
 
   &-header
-    height 64px
+    height var(--header-height)
 
   &-publication
-    height 380px
+    padding 48px 0
+    height auto
+
+    &-name
+      width 48%
+      display flex
+      flex-wrap wrap
+      justify-content center
+      align-content center
+
+    &-logo
+      width var(--max-width)
+      display flex
+      padding 12px 0
+      justify-content center
+      flex-wrap wrap
+
+      &-image
+        height 40px
+        margin 12px 30px
+
+@media screen and (max-width 479px)
+  .xnavi
+    &-visual
+      &-copy
+        width calc(var(--max-width) - var(--copy-padding)*2)
+      &-app
+        height auto
+        width var(--max-width)
+    &-page
+      &-image, &-movie
+        height auto
+        width var(--max-width)

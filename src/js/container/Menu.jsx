@@ -20,6 +20,7 @@ const menuStyle = theme => {
     },
     list: {
       color: theme.palette.primary[800],
+      fontWeight: 'normal',
       fontVariantLigatures: 'none',
       letterSpacing: '1.5px',
     },

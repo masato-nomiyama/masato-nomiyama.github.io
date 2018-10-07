@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import YouTube from 'react-youtube'
 
 import conceptImage from '../../img/xnavi-concept.png'
+import conceptImage2 from '../../img/xnavi-concept2.png'
 import cyberLogo from '../../img/cyber-logo.png'
 import ubicompLogo from '../../img/ubicomp-logo.png'
 import utLogo from '../../img/ut-logo.png'
@@ -16,6 +17,14 @@ const bodyStyle = {
   lineHeight: '1.5em',
   letterSpacing: '0.5px',
   textAlign: 'center',
+}
+const bodyHighlightStyle = {
+  ...bodyStyle,
+  color: '#fff',
+  transition: 'color 0.2s ease',
+  '&:hover': {
+    color: '#fb4145',
+  },
 }
 const titleStyle = {
   fontWeight: 'lighter',
@@ -32,6 +41,9 @@ const xnaviStyle = theme => {
     },
     background3: {
       backgroundColor: theme.palette.primary[200],
+    },
+    background4: {
+      backgroundColor: theme.palette.primary[300],
     },
     backgroundAlpha: {
       backgroundColor: 'rgba(0,0,0,0.5)',
@@ -55,34 +67,23 @@ const xnaviStyle = theme => {
       color: '#fff',
       letterSpacing: '1px',
     },
-    body: {
-      ...bodyStyle,
-      color: '#fff',
-      fontWeight: 'normal',
-    },
     bodyLeft: {
       ...bodyStyle,
       color: '#fff',
-      fontWeight: 'normal',
+      fontWeight: 'lighter',
       textAlign: 'start',
     },
     bodyDark: {
       ...bodyStyle,
       color: '#000',
-      fontWeight: 'bold',
+      fontWeight: 'normal',
     },
     bodyHighlight: {
-      ...bodyStyle,
-      color: '#fff',
+      ...bodyHighlightStyle,
       fontWeight: 'normal',
-      '&:hover': {
-        color: theme.palette.secondary.main,
-        transition: 'color 0.2s ease',
-      },
     },
-    bodyThin: {
-      ...bodyStyle,
-      color: '#fff',
+    bodyHighlightThin: {
+      ...bodyHighlightStyle,
       fontWeight: 'lighter',
     },
   }
@@ -126,7 +127,7 @@ class Xnavi extends PureComponent {
               className={classes.bodyLeft}
               variant='title'
             >
-              Xnavi helps tourists make a trip plan based on their favorite experiences.
+              Xnavi meets travel needs based on experiences.
             </Typography>
           </div>
           <img
@@ -151,11 +152,31 @@ class Xnavi extends PureComponent {
             Xnavi
           </Typography>
           <Typography
-            className={classes.bodyDark}
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
             variant='title'
           >
-            It is a travel planning system for active planners to meet travel needs,<br/>
-            such as "a demand to go apple picking" and "a demand to relax in hot springs after skiing."
+            Xnavi is a travel planning system.
+          </Typography>
+          <Typography
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
+            variant='title'
+          >
+            It helps find good travel experiences and travel sequences.
+          </Typography>
+          <Typography
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
+            variant='body2'
+          >
+            such as "going apple picking" and "relaxing in hot springs after skiing"
           </Typography>
         </div>
         <div
@@ -170,11 +191,14 @@ class Xnavi extends PureComponent {
             alt='Concept'
           />
           <Typography
-            className={classes.bodyDark}
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
             variant='title'
           >
-            Those needs are classified into ones about "travel experiences" and "travel sequences."<br/>
-            Xnavi offers experience flows, which are basic units of a travel plan.
+            Xnavi offers experience flows,<br/>
+            which include two travel experiences and one travel sequence.
           </Typography>
         </div>
         <div
@@ -183,16 +207,42 @@ class Xnavi extends PureComponent {
             classes.background3,
           ].join(' ')}
         >
+          <img
+            className='xnavi-page-image'
+            src={conceptImage2}
+            alt='Concept'
+          />
+          <Typography
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
+            variant='title'
+          >
+            Tourists can make good itineraries<br/>
+            by connecting travel experiences repeatedly.
+          </Typography>
+        </div>
+        <div
+          className={[
+            'xnavi-page',
+            classes.background4,
+          ].join(' ')}
+        >
           <YouTube
+            className='xnavi-page-movie'
             videoId='08ni9HIG2YA'
             opts={{
-              height: '337.5px',
-              width: '600px',
+              height: 360,
+              width: 640,
               playerVars: { autoplay: 0, rel: 0 },
             }}
           />
           <Typography
-            className={classes.bodyDark}
+            className={[
+              'xnavi-page-body',
+              classes.bodyDark,
+            ].join(' ')}
             variant='body2'
           >
             1. SELECT KEYWORDS　/　2. SELECT TAG FLOWS　/　3. PLAN A TRIP
@@ -208,87 +258,112 @@ class Xnavi extends PureComponent {
           <Typography
             className={[
               'xnavi-page-title',
-              classes.body
+              classes.title,
             ].join(' ')}
             variant='title'
           >
-            <a
-              className={classes.bodyHighlight}
-              href='https://masatonomiyama.com'
-              target='_blank'
-            >
-              Masato Nomiyama
-            </a>　　　　<a
-              className={classes.bodyHighlight}
-              href='https://totakke.net'
-              target='_blank'
-            >
-              Toshiki Takeuchi
-            </a>　　　　<a
-              className={classes.bodyHighlight}
-              href='https://masatonomiyama.com'
-              target='_blank'
-            >
-              Hiroyuki Onimaru
+            more information...<br/><br/>
+          </Typography>
+          <div className='xnavi-publication-name'>
+            <a href='https://masatonomiyama.com' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Masato Nomiyama
+              </Typography>
             </a>
-          </Typography>
-          <Typography
-            className={[
-              'xnavi-page-title',
-              classes.body
-            ].join(' ')}
-            variant='title'
-          >
-            <a
-              className={classes.bodyHighlight}
-              href='https://www.cyber.t.u-tokyo.ac.jp'
-              target='_blank'
-            >
-              Tomohiro Tanikawa
-            </a>　　　　<a
-              className={classes.bodyHighlight}
-              href='https://www.cyber.t.u-tokyo.ac.jp/~narumi/'
-              target='_blank'
-            >
-              Takuji Narumi
-            </a>　　　　<a
-              className={classes.bodyHighlight}
-              href='https://twitter.com/_anohito'
-              target='_blank'
-            >
-              Michitaka Hirose
-            </a><br/><br/>
-          </Typography>
-          <div>
+            <a href='https://totakke.net' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Toshiki Takeuchi
+              </Typography>
+            </a>
+            <a href='https://global.honda/' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Hiroyuki Onimaru
+              </Typography>
+            </a>
+            <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Tomohiro Tanikawa
+              </Typography>
+            </a>
+            <a href='https://www.cyber.t.u-tokyo.ac.jp/~narumi' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Takuji Narumi
+              </Typography>
+            </a>
+            <a href='https://twitter.com/_anohito' target='_blank'>
+              <Typography
+                className={[
+                  'xnavi-page-title',
+                  classes.bodyHighlight
+                ].join(' ')}
+                variant='title'
+              >
+                Michitaka Hirose
+              </Typography>
+            </a>
+          </div>
+          <div className='xnavi-publication-logo'>
             <a href='http://ubicomp.org/ubicomp2018/' target='_blank'>
               <img
-                className='xnavi-page-logo'
+                className='xnavi-publication-logo-image'
                 src={ubicompLogo}
                 alt='UbiComp2018'
               />
             </a>
             <a href='https://www.u-tokyo.ac.jp' target='_blank'>
               <img
-                className='xnavi-page-logo'
+                className='xnavi-publication-logo-image'
                 src={utLogo}
                 alt='The University of Tokyo'
               />
             </a>
             <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
               <img
-                className='xnavi-page-logo'
+                className='xnavi-publication-logo-image'
                 src={cyberLogo}
                 alt='Cyber Interface Lab.'
               />
             </a>
           </div>
-          <Typography
-            className={classes.bodyThin}
-            variant='body2'
-          >
-            "Xnavi: Travel Planning System Based on Experience Flows"<br/>
-            Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 2.1 (2018)
-          </Typography>
+          <a href='https://dl.acm.org/citation.cfm?id=3191759' target='_blank'>
+            <Typography
+              className={classes.bodyHighlightThin}
+              variant='body2'
+            >
+              "Xnavi: Travel Planning System Based on Experience Flows"<br/>
+              Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 2.1 (2018)
+            </Typography>
+          </a>
         </div>
       </div>
     )

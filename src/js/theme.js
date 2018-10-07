@@ -25,13 +25,13 @@ export const theme = createMuiTheme({
       fontSize: '2em',
     },
     display3: {
-      fontSize: '1.8em',
+      fontSize: '1.75em',
     },
     display2: {
-      fontSize: '1.6em',
+      fontSize: '1.55em',
     },
     display1: {
-      fontSize: '1.4em',
+      fontSize: '1.35em',
     },
     headline: {
       fontSize: '1.15em',
@@ -43,17 +43,17 @@ export const theme = createMuiTheme({
     },
     body2: {
       color: grey[600],
-      fontSize: '0.8em',
+      fontSize: '0.75em',
     },
     body1: {
-      fontSize: '0.8em',
+      fontSize: '0.75em',
       textAlign: 'right',
     },
     caption: {
       fontSize: '0.7em',
     },
     button: {
-      fontSize: '0.8em',
+      fontSize: '0.75em',
     },
   },
 })
