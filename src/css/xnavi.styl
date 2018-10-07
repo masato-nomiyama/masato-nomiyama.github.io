@@ -30,7 +30,8 @@
       height 350px
 
   &-page
-    height 810px
+    height auto
+    padding 280px 0
     width 100%
     display flex
     flex-direction column
@@ -44,14 +45,27 @@
       max-width var(--max-width)
       padding 3px
 
+    &-section
+      margin 50px 0
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+
     &-image
-      width 525px
+      width 480px
       margin 36px
 
     &-movie
-      width 600px
+      margin 12px 0
+      height 270px
+      width 480px
+
+      &-wrapper
+        text-align center
 
   &-header
+    padding 0
     height var(--header-height)
 
   &-publication
@@ -85,6 +99,10 @@
         height auto
         width var(--max-width)
     &-page
-      &-image, &-movie
+      &-movie
+        height 180px
+        width 320px
+
+      &-image
         height auto
         width var(--max-width)

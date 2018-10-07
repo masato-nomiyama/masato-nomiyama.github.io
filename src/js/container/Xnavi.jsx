@@ -42,9 +42,6 @@ const xnaviStyle = theme => {
     background3: {
       backgroundColor: theme.palette.primary[200],
     },
-    background4: {
-      backgroundColor: theme.palette.primary[300],
-    },
     backgroundAlpha: {
       backgroundColor: 'rgba(0,0,0,0.5)',
     },
@@ -185,21 +182,40 @@ class Xnavi extends PureComponent {
             classes.background2,
           ].join(' ')}
         >
-          <img
-            className='xnavi-page-image'
-            src={conceptImage}
-            alt='Concept'
-          />
-          <Typography
-            className={[
-              'xnavi-page-body',
-              classes.bodyDark,
-            ].join(' ')}
-            variant='title'
-          >
-            Xnavi offers experience flows,<br/>
-            which include two travel experiences and one travel sequence.
-          </Typography>
+          <div className='xnavi-page-section'>
+            <img
+              className='xnavi-page-image'
+              src={conceptImage}
+              alt='Concept'
+            />
+            <Typography
+              className={[
+                'xnavi-page-body',
+                classes.bodyDark,
+              ].join(' ')}
+              variant='body2'
+            >
+              Xnavi offers experience flows,<br/>
+              which include two travel experiences and one travel sequence.
+            </Typography>
+          </div>
+          <div className='xnavi-page-section'>
+            <img
+              className='xnavi-page-image'
+              src={conceptImage2}
+              alt='Concept'
+            />
+            <Typography
+              className={[
+                'xnavi-page-body',
+                classes.bodyDark,
+              ].join(' ')}
+              variant='body2'
+            >
+              Tourists can make good itineraries<br/>
+              by connecting travel experiences repeatedly.
+            </Typography>
+          </div>
         </div>
         <div
           className={[
@@ -207,34 +223,20 @@ class Xnavi extends PureComponent {
             classes.background3,
           ].join(' ')}
         >
-          <img
-            className='xnavi-page-image'
-            src={conceptImage2}
-            alt='Concept'
-          />
           <Typography
             className={[
-              'xnavi-page-body',
-              classes.bodyDark,
+              'xnavi-page-title',
+              classes.titleDark,
             ].join(' ')}
             variant='title'
           >
-            Tourists can make good itineraries<br/>
-            by connecting travel experiences repeatedly.
+            how to use
           </Typography>
-        </div>
-        <div
-          className={[
-            'xnavi-page',
-            classes.background4,
-          ].join(' ')}
-        >
           <YouTube
             className='xnavi-page-movie'
+            containerClassName='xnavi-page-movie-wrapper'
             videoId='08ni9HIG2YA'
             opts={{
-              height: 360,
-              width: 640,
               playerVars: { autoplay: 0, rel: 0 },
             }}
           />
@@ -245,7 +247,9 @@ class Xnavi extends PureComponent {
             ].join(' ')}
             variant='body2'
           >
-            1. SELECT KEYWORDS　/　2. SELECT TAG FLOWS　/　3. PLAN A TRIP
+            1. Select travel experiences as keywords.<br/>
+            2. Select travel sequences as tag flows.<br/>
+            3. Plan a trip using experience flows.
           </Typography>
         </div>
         <div
