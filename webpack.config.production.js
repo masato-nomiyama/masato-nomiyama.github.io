@@ -11,7 +11,10 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(
-      ['dist/*.*'],
+      [
+        'dist/*.*',
+        'dist/img/*.*',
+      ],
       { root: path.resolve(__dirname) },
     ),
     new OptimizeCssAssetsPlugin({
