@@ -74,7 +74,11 @@ const xnaviStyle = theme => {
     bodyHighlight: {
       ...bodyStyle,
       color: '#fff',
-      fontWeight: 'bold',
+      fontWeight: 'normal',
+      '&:hover': {
+        color: theme.palette.secondary.main,
+        transition: 'color 0.2s ease',
+      },
     },
     bodyThin: {
       ...bodyStyle,
