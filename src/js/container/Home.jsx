@@ -66,14 +66,22 @@ class Home extends PureComponent {
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div />
+            <div>
+              <Typography variant='body2'>
+                coming soon
+              </Typography>
+            </div>
           </div>
         )
       case 'achievements':
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div />
+            <div>
+              <Typography variant='body2'>
+                coming soon
+              </Typography>
+            </div>
           </div>
         )
       case 'contact':
