@@ -16,6 +16,12 @@ const homeStyle = theme => {
       fontVariantLigatures: 'none',
       letterSpacing: '1.8px',
     },
+    highlightBody:  {
+      transition: 'color 0.1s ease',
+      '&:hover': {
+        color: theme.palette.secondary.dark,
+      },
+    },
   }
 }
 
@@ -74,7 +80,30 @@ class Home extends PureComponent {
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div />
+            <div className='contact'>
+              <Typography className='contact-title' variant='title'>
+                Email
+              </Typography>
+              <Typography className='contact-body' variant='body2'>
+                nomiyama[at]cyber.t.u-tokyo.ac.jp
+              </Typography>
+            </div>
+            <div className='contact'>
+              <Typography className='contact-title' variant='title'>
+                Twitter
+              </Typography>
+              <a href='https://twitter.com/masatonomiyama' target='_blank'>
+                <Typography
+                  className={[
+                    'contact-body',
+                    this.props.classes.highlightBody,
+                  ].join(' ')}
+                  variant='body2'
+                >
+                  @masatonomiyama
+                </Typography>
+              </a>
+            </div>
           </div>
         )
       default:

@@ -1,6 +1,7 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
@@ -17,6 +18,7 @@ const cardStyle = theme => {
     ...style,
     actionArea: {
       fontSize: '100%',
+      color: 'rgb(0, 0, 0, 0.99)',
     },
     card: {
       maxWidth: 316,
@@ -39,11 +41,11 @@ const WorksCard = props => {
   const {
     classes,
     className,
+    link,
     image,
     title,
     caption,
     keywords,
-    onClick,
   } = props
   return (
     <Card
@@ -53,29 +55,28 @@ const WorksCard = props => {
         ].join(' ')}
       elevation={0}
     >
-      <CardActionArea
-        className={classes.actionArea}
-        onClick={onClick}
-      >
-        <CardMedia
-          component='img'
-          alt={title}
-          className={classes.media}
-          image={image}
-          title={title}
-        />
-      <CardContent className={classes.content}>
-          <Typography variant='display1'>
-            {title}
-          </Typography>
-          <Typography variant='body2' className={classes.caption}>
-            {caption}
-          </Typography>
-          <Typography variant='caption'>
-            {keywords.join('/')}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Link to={link} target='_blank'>
+        <CardActionArea className={classes.actionArea}>
+          <CardMedia
+            component='img'
+            alt={title}
+            className={classes.media}
+            image={image}
+            title={title}
+          />
+          <CardContent className={classes.content}>
+              <Typography variant='display1'>
+                {title}
+              </Typography>
+              <Typography variant='body2' className={classes.caption}>
+                {caption}
+              </Typography>
+              <Typography variant='caption'>
+                {keywords.join('/')}
+              </Typography>
+            </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
   )
 }
