@@ -3,11 +3,21 @@
 import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
+import AppBar from '@material-ui/core/AppBar'
+import IconButton from '@material-ui/core/IconButton'
+import MediaQuery from 'react-responsive'
+import MenuIcon from '@material-ui/icons/Menu'
+import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
 import logo from '../../img/logo.png'
 
+const titleStyle = {
+  color: '#000',
+  fontWeight: 'normal',
+  letterSpacing: '2.5px',
+}
 const menuStyle = theme => {
   return {
     ...style,
@@ -15,14 +25,17 @@ const menuStyle = theme => {
       backgroundColor: theme.palette.background.default,
     },
     title: {
-      color: '#000',
-      letterSpacing: '2.5px',
+      ...titleStyle
     },
     list: {
       color: theme.palette.primary[800],
       fontWeight: 'normal',
       fontVariantLigatures: 'none',
       letterSpacing: '1.5px',
+    },
+    headerTitle: {
+      ...titleStyle,
+      flexGrow: 1,
     },
   }
 }
@@ -72,6 +85,34 @@ class Menu extends PureComponent {
     )
   }
 
+  renderHeader() {
+    return (
+      <AppBar
+        className={this.props.classes.background}
+        elevation={0}
+        position='relative'
+      >
+        <Toolbar>
+          <Typography
+            className={[
+              'menu-header-title',
+              this.props.classes.headerTitle,
+            ].join(' ')}
+            variant='title'
+          >
+            Masato Nomiyama
+          </Typography>
+          <IconButton
+            color='inherit'
+            aria-label='Menu'
+          >
+            <MenuIcon/>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    )
+  }
+
   render() {
     return (
       <div
@@ -80,14 +121,19 @@ class Menu extends PureComponent {
           this.props.className,
         ].join(' ')}
       >
-        {this.renderTitle()}
-        <div className='menu-list'>
-          {this.renderListItem({ text: 'profile' })}
-          {this.renderListItem({ text: 'works' })}
-          {this.renderListItem({ text: 'biography' })}
-          {this.renderListItem({ text: 'achievements' })}
-          {this.renderListItem({ text: 'contact' })}
-        </div>
+        <MediaQuery query='(max-width: 600px)'>
+          {this.renderHeader()}
+        </MediaQuery>
+        <MediaQuery query='(min-width: 600px)'>
+          {this.renderTitle()}
+          <div className='menu-list'>
+            {this.renderListItem({ text: 'profile' })}
+            {this.renderListItem({ text: 'works' })}
+            {this.renderListItem({ text: 'biography' })}
+            {this.renderListItem({ text: 'achievements' })}
+            {this.renderListItem({ text: 'contact' })}
+          </div>
+        </MediaQuery>
       </div>
     )
   }

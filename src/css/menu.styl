@@ -1,11 +1,6 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 .menu
-  height 100%
-  width var(--menu-width)
-  padding 0 var(--menu-left)
-  position fixed
-
   &-title
     margin 48px 0
 
@@ -37,6 +32,18 @@
         opacity 1
         transition width 0.2s ease, opacity 0.2s ease
 
-@media screen and (max-width 479px)
+@media screen and (max-width 600px)
   .menu
-    display none
+    position relative
+    width 100%
+
+    &-header-title
+      padding 6px
+
+@media screen and (min-width 600px)
+  .menu
+    position fixed
+    z-index 1
+    height 100%
+    width var(--menu-width)
+    padding 0 var(--menu-left)

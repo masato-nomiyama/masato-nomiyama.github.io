@@ -5,14 +5,15 @@
 @import 'xnavi'
 
 html, body, #root, #app
+  --menu-width 200px
+  --menu-left 40px
+  --content-left 48px
+  --content-left-mobile 16px
+
   height 100%
   margin auto
   background-color white
   scroll-behavior smooth
-
-  --menu-width 200px
-  --menu-left 40px
-  --content-left 48px
 
 #app
   max-width 1024px
@@ -33,7 +34,7 @@ a
 .exception
   padding 40px 0
 
-@media screen and (max-width 479px)
+@media screen and (max-width 600px)
   .content
-    width calc(100% - var(--content-left)*2)
-    padding 0 var(--content-left) 36px var(--content-left)
+    width calc(100% - var(--content-left-mobile)*2)
+    padding 0 var(--content-left-mobile) 36px var(--content-left-mobile)
