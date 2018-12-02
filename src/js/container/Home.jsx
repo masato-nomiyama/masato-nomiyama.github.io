@@ -52,14 +52,14 @@ class Home extends PureComponent {
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <Profile className={header} />
+            <Profile className={`home-${header}`} />
           </div>
         )
       case 'works':
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <WorksList className={header} />
+            <WorksList className={`home-${header}`} />
           </div>
         )
       case 'biography':
@@ -88,22 +88,22 @@ class Home extends PureComponent {
         return (
           <div className={className} id={header}>
             {this.renderHeader({ header })}
-            <div className='contact'>
-              <Typography className='contact-title' variant='title'>
+            <div className='home-contact'>
+              <Typography className='home-contact-title' variant='title'>
                 Email
               </Typography>
-              <Typography className='contact-body' variant='body2'>
-                nomiyama[at]cyber.t.u-tokyo.ac.jp
+              <Typography className='home-contact-body' variant='body2'>
+                nomy[at]takram.com
               </Typography>
             </div>
-            <div className='contact'>
-              <Typography className='contact-title' variant='title'>
+            <div className='home-contact'>
+              <Typography className='home-contact-title' variant='title'>
                 Twitter
               </Typography>
               <a href='https://twitter.com/masatonomiyama' target='_blank'>
                 <Typography
                   className={[
-                    'contact-body',
+                    'home-contact-body',
                     this.props.classes.highlightBody,
                   ].join(' ')}
                   variant='body2'

@@ -18,7 +18,7 @@ const profileStyle = theme => {
 
 const renderAd = props => {
   return (
-    <div className='profile-item'>
+    <div className={`${props.className}-item`}>
       <Typography variant='title'>
         人を知り、好きを作る<br/><br/>
       </Typography>
@@ -38,15 +38,15 @@ const renderAd = props => {
 
 const renderMain = props => {
   return (
-    <div className='profile-item'>
+    <div className={`${props.className}-item`}>
       <img
-        className='profile-image'
+        className={`${props.className}-image`}
         src={profile}
         alt='Profile'
       />
       <Typography className={props.classes.name} variant='body2'>
         野見山 真人　Design Engineer<br/>
-        東京大学 情報理工学系研究科 知能機械情報学 修士修了
+        Takram
       </Typography>
     </div>
   )
