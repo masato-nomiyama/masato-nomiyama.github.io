@@ -24,7 +24,7 @@ const WorksList = props => {
         image={dressOfGhosts}
         title='生の装い'
         caption='無機質な粒子に生を宿す'
-        keywords={['TOUCHE', 'SVM', '電磁石制御']}
+        keywords={['Touché', 'SVM', '電磁石制御']}
       />
     </div>
   )

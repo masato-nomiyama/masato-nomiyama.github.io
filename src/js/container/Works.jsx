@@ -29,6 +29,7 @@ export default class Works extends PureComponent {
     this.productions = []
     this.exhibitions = []
     this.movie = null
+    this.technology = null
   }
 
   renderTitle() {
@@ -159,6 +160,32 @@ export default class Works extends PureComponent {
     return <div />
   }
 
+  renderTechnology() {
+    const { classes } = this.props
+    if (this.technology) {
+      return (
+        <div className='works-item'>
+          <Typography
+            variant='title'
+            className={[
+              'works-header',
+              classes.header,
+            ].join(' ')}
+          >
+            TECHNOLOGY
+          </Typography>
+          <Typography
+            variant='body2'
+            className='works-body'
+          >
+            {this.technology}
+          </Typography>
+        </div>
+      )
+    }
+    return <div />
+  }
+
   render() {
     return (
       <div className='works'>
@@ -167,6 +194,7 @@ export default class Works extends PureComponent {
         {this.renderProductions()}
         {this.renderExhibition()}
         {this.renderMovie()}
+        {this.renderTechnology()}
       </div>
     )
   }
