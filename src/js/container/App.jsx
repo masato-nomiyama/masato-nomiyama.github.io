@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 
+import DressOfGhosts from './DressOfGhosts'
 import Exception from '../component/Exception'
 import Home from './Home'
 import Menu from './Menu'
@@ -30,6 +31,10 @@ export default class App extends PureComponent {
               path='/works'
               render={props => (
                 <Switch>
+                  <Route
+                    exact path='/works/dress-of-ghosts'
+                    render={props => <DressOfGhosts className='dress-of-ghosts' {...props} />}
+                  />
                   <Route component={Exception} />
                 </Switch>
               )}
