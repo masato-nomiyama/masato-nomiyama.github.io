@@ -4,23 +4,20 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import profile from '../../img/profile.png'
+import image from '../../img/profile.png'
 import { style } from '../theme'
 
-const profileStyle = theme => {
+const customStyle = theme => {
   return {
     ...style,
-    name: {
-      color: '#000',
-    },
   }
 }
 
-const renderAd = props => {
+const renderCopywrite = props => {
   return (
     <div className={`${props.className}-item`}>
       <Typography variant='title'>
-        Creative Technologist & Artist<br/><br/>
+        Creative Technologist / Artist<br/><br/>
       </Typography>
       <Typography variant='body2'>
         ひとを知り、未来をつくる。
@@ -38,12 +35,12 @@ const renderAd = props => {
   )
 }
 
-const renderMain = props => {
+const renderImage = props => {
   return (
     <div className={`${props.className}-item`}>
       <img
         className={`${props.className}-image`}
-        src={profile}
+        src={image}
         alt='Profile'
       />
     </div>
@@ -53,10 +50,10 @@ const renderMain = props => {
 const Profile = props => {
   return (
     <div className={props.className}>
-      {renderAd(props)}
-      {renderMain(props)}
+      {renderCopywrite(props)}
+      {renderImage(props)}
     </div>
   )
 }
 
-export default withStyles(profileStyle)(Profile)
+export default withStyles(customStyle)(Profile)
