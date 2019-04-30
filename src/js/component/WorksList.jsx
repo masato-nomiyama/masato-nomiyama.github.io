@@ -7,7 +7,7 @@ import xnavi from '../../img/xnavi.jpg'
 import WorksCard from './WorksCard'
 
 const WorksList = props => {
-  const cardClassName = 'works-card'
+  const cardClassName = 'home-works-card'
   return (
     <div className={props.className}>
       <WorksCard
@@ -15,7 +15,7 @@ const WorksList = props => {
         link='/works/xnavi'
         image={xnavi}
         title='Xnavi'
-        caption='気になる観光体験からゆるく旅行計画を作る'
+        caption='体験をつなげて旅行計画を作る'
         keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
       />
       <WorksCard
