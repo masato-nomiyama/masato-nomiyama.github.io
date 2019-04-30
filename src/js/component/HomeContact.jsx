@@ -45,7 +45,7 @@ const renderItem = (props, content) => {
   )
 }
 
-const Profile = props => {
+const Contact = props => {
   return (
     <div className={props.className}>
       {renderItem(props, {
@@ -61,4 +61,4 @@ const Profile = props => {
   )
 }
 
-export default withStyles(customStyle)(Profile)
+export default withStyles(customStyle)(Contact)

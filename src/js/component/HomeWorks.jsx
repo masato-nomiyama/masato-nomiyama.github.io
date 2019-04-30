@@ -6,13 +6,13 @@ import dressOfGhosts from '../../img/dress-of-ghosts.png'
 import maestroOfTime from '../../img/maestro-of-time.png'
 import myFeelingCantReachYou from '../../img/my-feeling-cant-reach-you.jpg'
 import xnavi from '../../img/xnavi.jpg'
-import WorksCard from './WorksCard'
+import HomeWorksCard from './HomeWorksCard'
 
-const WorksList = props => {
+const HomeWorks = props => {
   const cardClassName = 'home-works-card'
   return (
     <div className={props.className}>
-      <WorksCard
+      <HomeWorksCard
         className={cardClassName}
         link='/works/xnavi'
         image={xnavi}
@@ -20,7 +20,7 @@ const WorksList = props => {
         caption='体験をつなげて旅行計画を作る'
         keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
       />
-      <WorksCard
+      <HomeWorksCard
         className={cardClassName}
         link='/works/dress-of-ghosts'
         image={dressOfGhosts}
@@ -28,7 +28,7 @@ const WorksList = props => {
         caption='無機質な粒子に生を宿す'
         keywords={['Touché', 'SVM', '電磁石制御']}
       />
-      <WorksCard
+      <HomeWorksCard
         className={cardClassName}
         link='/works/my-feeling-cant-reach-you'
         image={myFeelingCantReachYou}
@@ -36,7 +36,7 @@ const WorksList = props => {
         caption='言葉はかたちを失いその想いを伝える'
         keywords={['音声解析', '音声合成']}
       />
-      <WorksCard
+      <HomeWorksCard
         className={cardClassName}
         link='/works/maestro-of-time'
         image={maestroOfTime}
@@ -48,4 +48,4 @@ const WorksList = props => {
   )
 }
 
-export default WorksList
+export default HomeWorks

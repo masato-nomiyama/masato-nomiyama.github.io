@@ -37,7 +37,7 @@ const cardStyle = theme => {
   }
 }
 
-const WorksCard = props => {
+const HomeWorksCard = props => {
   const {
     classes,
     className,
@@ -81,4 +81,4 @@ const WorksCard = props => {
   )
 }
 
-export default withStyles(cardStyle)(WorksCard)
+export default withStyles(cardStyle)(HomeWorksCard)

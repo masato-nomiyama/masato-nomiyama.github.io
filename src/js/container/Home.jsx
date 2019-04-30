@@ -5,9 +5,9 @@ import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
-import Contact from '../component/Contact'
-import Profile from '../component/Profile'
-import WorksList from '../component/WorksList'
+import HomeContact from '../component/HomeContact'
+import HomeProfile from '../component/HomeProfile'
+import HomeWorks from '../component/HomeWorks'
 
 const homeStyle = theme => {
   return {
@@ -16,12 +16,6 @@ const homeStyle = theme => {
       color: theme.palette.primary[800],
       fontVariantLigatures: 'none',
       letterSpacing: '1.8px',
-    },
-    highlightBody:  {
-      transition: 'color 0.1s ease',
-      '&:hover': {
-        color: theme.palette.secondary.dark,
-      },
     },
   }
 }
@@ -54,10 +48,10 @@ class Home extends PureComponent {
         {(() => {
           switch(header) {
             case 'profile': return (
-              <Profile className={`home-${header}`} />
+              <HomeProfile className={`home-${header}`} />
             )
             case 'works': return (
-              <WorksList className={`home-${header}`} />
+              <HomeWorks className={`home-${header}`} />
             )
             case 'biography': return (
               <div>
@@ -74,7 +68,7 @@ class Home extends PureComponent {
               </div>
             )
             case 'contact': return (
-              <Contact className={`home-${header}`} />
+              <HomeContact className={`home-${header}`} />
             )
             default:
               return (
