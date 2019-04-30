@@ -26,10 +26,11 @@ export default class Works extends PureComponent {
     this.title = null
     this.image = null
     this.descriptions = []
-    this.productions = []
+    this.creators = []
     this.exhibitions = []
     this.movie = null
     this.technology = null
+    this.technologyImage = null
   }
 
   renderTitle() {
@@ -72,17 +73,17 @@ export default class Works extends PureComponent {
     )
   }
 
-  renderProductions() {
+  renderCreators() {
     const { classes } = this.props
     const components = []
-    for (let i = 0; i < this.productions.length; i += 1) {
+    for (let i = 0; i < this.creators.length; i += 1) {
       components.push(
         <Typography
-          key={`production${i}`}
+          key={`creator${i}`}
           variant='body2'
           className='works-body'
         >
-          {this.productions[i]}
+          {this.creators[i]}
         </Typography>
       )
     }
@@ -95,7 +96,7 @@ export default class Works extends PureComponent {
             classes.header,
           ].join(' ')}
         >
-          PRODUCTION
+          CREATOR
         </Typography>
         {components}
       </div>
@@ -116,20 +117,24 @@ export default class Works extends PureComponent {
         </Typography>
       )
     }
-    return (
-      <div className='works-item'>
-        <Typography
-          variant='title'
-          className={[
-            'works-header',
-            classes.header,
-          ].join(' ')}
-        >
-          EXHIBITION
-        </Typography>
-        {components}
-      </div>
-    )
+    if (this.exhibitions.length > 0) {
+      return (
+        <div className='works-item'>
+          <Typography
+            variant='title'
+            className={[
+              'works-header',
+              classes.header,
+            ].join(' ')}
+          >
+            EXHIBITION
+          </Typography>
+          {components}
+        </div>
+      )
+    } else {
+      <div />
+    }
   }
 
   renderMovie() {
@@ -162,7 +167,7 @@ export default class Works extends PureComponent {
 
   renderTechnology() {
     const { classes } = this.props
-    if (this.technology) {
+    if (this.technology || this.technologyImage) {
       return (
         <div className='works-item'>
           <Typography
@@ -174,12 +179,21 @@ export default class Works extends PureComponent {
           >
             TECHNOLOGY
           </Typography>
-          <Typography
-            variant='body2'
-            className='works-body'
-          >
-            {this.technology}
-          </Typography>
+          {this.technology ? (
+            <Typography
+              variant='body2'
+              className='works-body'
+            >
+              {this.technology}
+            </Typography>
+          ) : (<div />)}
+          {this.technologyImage ? (
+            <img
+              className='works-sub-image'
+              src={this.technologyImage}
+              alt='technology'
+            />
+          ) : (<div />)}
         </div>
       )
     }
@@ -191,7 +205,7 @@ export default class Works extends PureComponent {
       <div className='works'>
         {this.renderTitle()}
         {this.renderDescriptions()}
-        {this.renderProductions()}
+        {this.renderCreators()}
         {this.renderExhibition()}
         {this.renderMovie()}
         {this.renderTechnology()}

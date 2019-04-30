@@ -3,6 +3,8 @@
 import React from 'react'
 
 import dressOfGhosts from '../../img/dress-of-ghosts.png'
+import maestroOfTime from '../../img/maestro-of-time.png'
+import myFeelingCantReachYou from '../../img/my-feeling-cant-reach-you.jpg'
 import xnavi from '../../img/xnavi.jpg'
 import WorksCard from './WorksCard'
 
@@ -25,6 +27,22 @@ const WorksList = props => {
         title='生の装い'
         caption='無機質な粒子に生を宿す'
         keywords={['Touché', 'SVM', '電磁石制御']}
+      />
+      <WorksCard
+        className={cardClassName}
+        link='/works/my-feeling-cant-reach-you'
+        image={myFeelingCantReachYou}
+        title='伝わらないこの気持ち'
+        caption='言葉はかたちを失いその想いを伝える'
+        keywords={['音声解析', '音声合成']}
+      />
+      <WorksCard
+        className={cardClassName}
+        link='/works/maestro-of-time'
+        image={maestroOfTime}
+        title='時の指揮者'
+        caption='クロスモーダルに時間の流れを体感する'
+        keywords={['Kinect', 'ムーブメント制御', 'AR']}
       />
     </div>
   )
