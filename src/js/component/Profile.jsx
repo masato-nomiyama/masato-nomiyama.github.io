@@ -20,17 +20,19 @@ const renderAd = props => {
   return (
     <div className={`${props.className}-item`}>
       <Typography variant='title'>
-        人を知り、好きを作る<br/><br/>
+        Creative Technologist & Artist<br/><br/>
       </Typography>
       <Typography variant='body2'>
-        私たちは自身のことでさえよく知りません<br/>
-        <br/>
-        なぜ楽しいと感じるのか<br/>
-        なぜ思い通りに計画が進まないのか<br/>
-        なぜあの人を信頼できるのか<br/>
-        <br/>
-        こうした仕組みを紐解くことで人の行動をデザインし<br/>
-        誰もが「好き」に夢中になれる未来を作ります
+        ひとを知り、未来をつくる。
+        <br/><br/>
+        ひとの判断能力や感情の拡張をテーマに、テクノロジーのもたらす未来の可能性を考える。
+        ソフトウェア・ハードウェア問わず、幅広い分野でコンセプトの構築とプロトタイプの制作を手がける。
+        <br/><br/>
+        特にシステムデザインとメディアアートの制作を専門とする。
+        システムデザインでは、テクノロジーと親和性をもったUI/UXをデザインすることで、ひとの思考や判断の拡張方法を考える。
+        一方メディアアートの制作では、水や砂といった自然物にテクノロジーを埋め込むことで、ひとの感情の機微や生の本質を浮き彫りにする。
+        <br/><br/>
+        2018年に知能機械情報学を修了し東京大学大学院を卒業。同年よりTakramに参加。
       </Typography>
     </div>
   )
@@ -44,10 +46,6 @@ const renderMain = props => {
         src={profile}
         alt='Profile'
       />
-      <Typography className={props.classes.name} variant='body2'>
-        野見山 真人　Design Engineer<br/>
-        Takram
-      </Typography>
     </div>
   )
 }
