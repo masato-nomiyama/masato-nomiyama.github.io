@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
+import HomeBiography from '../component/HomeBiography'
 import HomeContact from '../component/HomeContact'
 import HomeProfile from '../component/HomeProfile'
 import HomeWorks from '../component/HomeWorks'
@@ -54,11 +55,7 @@ class Home extends PureComponent {
               <HomeWorks className={`home-${header}`} />
             )
             case 'biography': return (
-              <div>
-                <Typography variant='body2'>
-                  coming soon
-                </Typography>
-              </div>
+              <HomeBiography className={`home-${header}`} />
             )
             case 'achievements': return (
               <div>
