@@ -49,8 +49,12 @@ const HomeBiography = props => {
       })}
       {renderItem(props, {
         title: '2018.11',
-        body: '東京大学 制作展 参加',
+        body: '東京大学制作展2018 参加',
         isEmptyTitle: true,
+      })}
+      {renderItem(props, {
+        title: '2018.10',
+        body: 'UbiComp 2018 参加',
       })}
       {renderItem(props, {
         title: '2018.09',
@@ -66,8 +70,12 @@ const HomeBiography = props => {
       })}
       {renderItem(props, {
         title: '2016.11',
-        body: '東京大学 制作展 参加',
+        body: '東京大学制作展2016 参加',
         isEmptyTitle: true,
+      })}
+      {renderItem(props, {
+        title: '2016.09',
+        body: 'UbiComp 2016 参加',
       })}
       {renderItem(props, {
         title: '2016.04',
