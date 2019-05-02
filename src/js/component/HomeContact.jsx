@@ -18,14 +18,14 @@ const customStyle = theme => {
   }
 }
 
-const renderItem = (props, content) => {
+const renderItem = (props, item) => {
   return (
     <div className={`${props.className}-item`}>
-      <Typography variant='title'>
-        {content.title}
+      <Typography variant='subheading'>
+        {item.title}
       </Typography>
-      {content.link ? (
-        <a href={content.link} target='_blank'>
+      {item.link ? (
+        <a href={item.link} target='_blank'>
           <Typography
             className={[
               'home-contact-body',
@@ -33,12 +33,12 @@ const renderItem = (props, content) => {
             ].join(' ')}
             variant='body2'
           >
-            {content.item}
+            {item.body}
           </Typography>
         </a>
       ) : (
         <Typography variant='body2'>
-          {content.item}
+          {item.body}
         </Typography>
       )}
     </div>
@@ -50,12 +50,12 @@ const Contact = props => {
     <div className={props.className}>
       {renderItem(props, {
         title: 'Email',
-        item: 'nomy[at]takram.com',
+        body: 'nomy[at]takram.com',
       })}
       {renderItem(props, {
         title: 'Twitter',
         link: 'https://twitter.com/masatonomiyama',
-        item: '@masatonomiyama',
+        body: '@masatonomiyama',
       })}
     </div>
   )
