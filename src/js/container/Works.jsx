@@ -179,21 +179,23 @@ export default class Works extends PureComponent {
           >
             TECHNOLOGY
           </Typography>
-          {this.technology ? (
-            <Typography
-              variant='body2'
-              className='works-body'
-            >
-              {this.technology}
-            </Typography>
-          ) : (<div />)}
-          {this.technologyImage ? (
-            <img
-              className='works-sub-image'
-              src={this.technologyImage}
-              alt='technology'
-            />
-          ) : (<div />)}
+          <div className='works-inner-item'>
+            {this.technologyImage ? (
+              <img
+                className='works-inner-image'
+                src={this.technologyImage}
+                alt='technology'
+              />
+            ) : (<div />)}
+            {this.technology ? (
+              <Typography
+                variant='body2'
+                className='works-body'
+              >
+                {this.technology}
+              </Typography>
+            ) : (<div />)}
+          </div>
         </div>
       )
     }

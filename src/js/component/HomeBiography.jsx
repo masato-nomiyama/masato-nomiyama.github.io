@@ -10,7 +10,7 @@ const customStyle = theme => {
   return {
     ...style,
     body: {
-      margin: '0 0 0 12px',
+      margin: '0 0 0 16px',
     },
     emptyTitle: {
       color: '#FFFFFF',
