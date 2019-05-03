@@ -14,14 +14,6 @@ const HomeWorks = props => {
     <div className={props.className}>
       <HomeWorksCard
         className={cardClassName}
-        link='/works/xnavi'
-        image={xnavi}
-        title='Xnavi'
-        caption='体験をつなげて旅行計画を作る'
-        keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
-      />
-      <HomeWorksCard
-        className={cardClassName}
         link='/works/dress-of-ghosts'
         image={dressOfGhosts}
         title='生の装い'
@@ -35,6 +27,14 @@ const HomeWorks = props => {
         title='伝わらないこの気持ち'
         caption='言葉はかたちを失いその想いを伝える'
         keywords={['音声解析', '音声合成']}
+      />
+      <HomeWorksCard
+        className={cardClassName}
+        link='/works/xnavi'
+        image={xnavi}
+        title='Xnavi'
+        caption='体験をつなげて旅行計画を作る'
+        keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
       />
       <HomeWorksCard
         className={cardClassName}
