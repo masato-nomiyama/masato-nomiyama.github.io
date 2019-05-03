@@ -73,4 +73,11 @@ export const style = {
     margin: '2px 0 0',
     height: '1px',
   },
+  highlightBody:  {
+    transition: 'color 0.1s ease',
+    color: theme.palette.secondary.dark,
+    '&:hover': {
+      color: theme.palette.secondary[900],
+    },
+  },
 }
