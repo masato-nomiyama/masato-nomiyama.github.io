@@ -9,12 +9,6 @@ import { style } from '../theme'
 const customStyle = theme => {
   return {
     ...style,
-    highlightBody:  {
-      transition: 'color 0.1s ease',
-      '&:hover': {
-        color: theme.palette.secondary.dark,
-      },
-    },
   }
 }
 
