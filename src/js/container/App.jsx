@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 import DressOfGhosts from '../page/DressOfGhosts'
 import MaestroOfTime from '../page/MaestroOfTime'
+import Morimori from '../page/Morimori'
 import MyFeelingCantReachYou from '../page/MyFeelingCantReachYou'
 import Exception from '../component/Exception'
 import Home from './Home'
@@ -40,6 +41,10 @@ export default class App extends PureComponent {
                   <Route
                     exact path='/works/maestro-of-time'
                     render={props => <MaestroOfTime className='maestro-of-time' {...props} />}
+                  />
+                  <Route
+                    exact path='/works/morimori'
+                    render={props => <Morimori className='morimori' {...props} />}
                   />
                   <Route
                     exact path='/works/my-feeling-cant-reach-you'

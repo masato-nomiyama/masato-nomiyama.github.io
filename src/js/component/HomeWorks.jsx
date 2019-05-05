@@ -4,6 +4,7 @@ import React from 'react'
 
 import dressOfGhosts from '../../img/dress-of-ghosts.png'
 import maestroOfTime from '../../img/maestro-of-time.png'
+import morimori from '../../img/morimori.png'
 import myFeelingCantReachYou from '../../img/my-feeling-cant-reach-you.jpg'
 import xnavi from '../../img/xnavi.jpg'
 import HomeWorksCard from './HomeWorksCard'
@@ -35,6 +36,14 @@ const HomeWorks = props => {
         title='Xnavi'
         caption='気になる体験から旅行を計画する'
         keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
+      />
+      <HomeWorksCard
+        className={cardClassName}
+        link='/works/morimori'
+        image={morimori}
+        title='筋肉専用プリクラ morimori'
+        caption='自分の体をよりよく見せる'
+        keywords={['画像認識', '画像加工']}
       />
       <HomeWorksCard
         className={cardClassName}
