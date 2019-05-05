@@ -1,7 +1,7 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 import React, { PureComponent } from 'react'
-import { withStyles } from '@material-ui/core/styles'
+import DocumentTitle from 'react-document-title'
 import Typography from '@material-ui/core/Typography'
 import YouTube from 'react-youtube'
 
@@ -31,6 +31,13 @@ export default class Works extends PureComponent {
     this.movie = null
     this.technology = null
     this.technologyImage = null
+  }
+
+  componentDidMount() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
   }
 
   renderTitle() {
@@ -204,14 +211,16 @@ export default class Works extends PureComponent {
 
   render() {
     return (
-      <div className='works'>
-        {this.renderTitle()}
-        {this.renderDescriptions()}
-        {this.renderCreators()}
-        {this.renderExhibition()}
-        {this.renderMovie()}
-        {this.renderTechnology()}
-      </div>
+      <DocumentTitle title={`${this.title} | Masato Nomiyama`}>
+        <div className='works'>
+          {this.renderTitle()}
+          {this.renderDescriptions()}
+          {this.renderCreators()}
+          {this.renderExhibition()}
+          {this.renderMovie()}
+          {this.renderTechnology()}
+        </div>
+      </DocumentTitle>
     )
   }
 }

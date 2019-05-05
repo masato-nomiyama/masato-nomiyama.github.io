@@ -2,6 +2,7 @@
 
 import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import DocumentTitle from 'react-document-title'
 import Typography from '@material-ui/core/Typography'
 import YouTube from 'react-youtube'
 
@@ -88,105 +89,161 @@ const xnaviStyle = theme => {
 
 class Xnavi extends PureComponent {
   componentDidMount() {
-    document.title = 'Xnavi'
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
   }
 
   render() {
     const { classes } = this.props
     return (
-      <div className='xnavi'>
-        <div
-          className={[
-            'xnavi-page',
-            'xnavi-header',
-            classes.backgroundDark,
-          ].join(' ')}
-        >
-          <Typography className={classes.title} variant='display2'>
-            Xnavi
-          </Typography>
-        </div>
-        <div className='xnavi-visual'>
-          <div className={[
-              'xnavi-visual-copy',
-              classes.backgroundAlpha,
-            ].join(' ')}>
+      <DocumentTitle title='Xnavi'>
+        <div className='xnavi'>
+          <div
+            className={[
+              'xnavi-page',
+              'xnavi-header',
+              classes.backgroundDark,
+            ].join(' ')}
+          >
+            <Typography className={classes.title} variant='display2'>
+              Xnavi
+            </Typography>
+          </div>
+          <div className='xnavi-visual'>
+            <div className={[
+                'xnavi-visual-copy',
+                classes.backgroundAlpha,
+              ].join(' ')}>
+              <Typography
+                className={[
+                  'xnavi-visual-copy-title',
+                  classes.titleNarrow,
+                ].join(' ')}
+                variant='display1'
+              >
+                Planning a trip roughly at will.
+              </Typography>
+              <Typography
+                className={classes.bodyLeft}
+                variant='title'
+              >
+                Xnavi meets travel needs based on experiences.
+              </Typography>
+            </div>
+            <img
+              className='xnavi-visual-app'
+              src={appImage}
+              alt='Xnavi'
+            />
+          </div>
+          <div
+            className={[
+              'xnavi-page',
+              classes.background1,
+            ].join(' ')}
+          >
             <Typography
               className={[
-                'xnavi-visual-copy-title',
-                classes.titleNarrow,
+                'xnavi-page-title',
+                classes.titleDark,
               ].join(' ')}
-              variant='display1'
+              variant='display2'
             >
-              Planning a trip roughly at will.
+              Xnavi
             </Typography>
             <Typography
-              className={classes.bodyLeft}
+              className={[
+                'xnavi-page-body',
+                classes.bodyDark,
+              ].join(' ')}
               variant='title'
             >
-              Xnavi meets travel needs based on experiences.
+              Xnavi is a travel planning system.
+            </Typography>
+            <Typography
+              className={[
+                'xnavi-page-body',
+                classes.bodyDark,
+              ].join(' ')}
+              variant='title'
+            >
+              It helps find good travel experiences and travel sequences.
+            </Typography>
+            <Typography
+              className={[
+                'xnavi-page-body',
+                classes.bodyDark,
+              ].join(' ')}
+              variant='body2'
+            >
+              such as "going apple picking" and "relaxing in hot springs after skiing"
             </Typography>
           </div>
-          <img
-            className='xnavi-visual-app'
-            src={appImage}
-            alt='Xnavi'
-          />
-        </div>
-        <div
-          className={[
-            'xnavi-page',
-            classes.background1,
-          ].join(' ')}
-        >
-          <Typography
+          <div
             className={[
-              'xnavi-page-title',
-              classes.titleDark,
+              'xnavi-page',
+              classes.background2,
             ].join(' ')}
-            variant='display2'
           >
-            Xnavi
-          </Typography>
-          <Typography
+            <div className='xnavi-page-section'>
+              <img
+                className='xnavi-page-image'
+                src={conceptImage}
+                alt='Concept'
+              />
+              <Typography
+                className={[
+                  'xnavi-page-body',
+                  classes.bodyDark,
+                ].join(' ')}
+                variant='body2'
+              >
+                Xnavi offers experience flows,<br/>
+                which include two travel experiences and one travel sequence.
+              </Typography>
+            </div>
+            <div className='xnavi-page-section'>
+              <img
+                className='xnavi-page-image'
+                src={conceptImage2}
+                alt='Concept'
+              />
+              <Typography
+                className={[
+                  'xnavi-page-body',
+                  classes.bodyDark,
+                ].join(' ')}
+                variant='body2'
+              >
+                Tourists can make good itineraries<br/>
+                by connecting travel experiences repeatedly.
+              </Typography>
+            </div>
+          </div>
+          <div
             className={[
-              'xnavi-page-body',
-              classes.bodyDark,
+              'xnavi-page',
+              classes.background3,
             ].join(' ')}
-            variant='title'
           >
-            Xnavi is a travel planning system.
-          </Typography>
-          <Typography
-            className={[
-              'xnavi-page-body',
-              classes.bodyDark,
-            ].join(' ')}
-            variant='title'
-          >
-            It helps find good travel experiences and travel sequences.
-          </Typography>
-          <Typography
-            className={[
-              'xnavi-page-body',
-              classes.bodyDark,
-            ].join(' ')}
-            variant='body2'
-          >
-            such as "going apple picking" and "relaxing in hot springs after skiing"
-          </Typography>
-        </div>
-        <div
-          className={[
-            'xnavi-page',
-            classes.background2,
-          ].join(' ')}
-        >
-          <div className='xnavi-page-section'>
-            <img
-              className='xnavi-page-image'
-              src={conceptImage}
-              alt='Concept'
+            <Typography
+              className={[
+                'xnavi-page-title',
+                classes.titleDark,
+              ].join(' ')}
+              variant='title'
+            >
+              how to use
+            </Typography>
+            <YouTube
+              className='xnavi-page-movie'
+              containerClassName='xnavi-page-movie-wrapper'
+              videoId='08ni9HIG2YA'
+              opts={{
+                playerVars: { autoplay: 0, rel: 0 },
+              }}
             />
             <Typography
               className={[
@@ -195,181 +252,130 @@ class Xnavi extends PureComponent {
               ].join(' ')}
               variant='body2'
             >
-              Xnavi offers experience flows,<br/>
-              which include two travel experiences and one travel sequence.
+              1. Select travel experiences as keywords.<br/>
+              2. Select travel sequences as tag flows.<br/>
+              3. Plan a trip using experience flows.
             </Typography>
           </div>
-          <div className='xnavi-page-section'>
-            <img
-              className='xnavi-page-image'
-              src={conceptImage2}
-              alt='Concept'
-            />
+          <div
+            className={[
+              'xnavi-page',
+              'xnavi-publication',
+              classes.backgroundDark2,
+            ].join(' ')}
+          >
             <Typography
               className={[
-                'xnavi-page-body',
-                classes.bodyDark,
+                'xnavi-page-title',
+                classes.title,
               ].join(' ')}
-              variant='body2'
+              variant='title'
             >
-              Tourists can make good itineraries<br/>
-              by connecting travel experiences repeatedly.
+              more information...<br/><br/>
             </Typography>
-          </div>
-        </div>
-        <div
-          className={[
-            'xnavi-page',
-            classes.background3,
-          ].join(' ')}
-        >
-          <Typography
-            className={[
-              'xnavi-page-title',
-              classes.titleDark,
-            ].join(' ')}
-            variant='title'
-          >
-            how to use
-          </Typography>
-          <YouTube
-            className='xnavi-page-movie'
-            containerClassName='xnavi-page-movie-wrapper'
-            videoId='08ni9HIG2YA'
-            opts={{
-              playerVars: { autoplay: 0, rel: 0 },
-            }}
-          />
-          <Typography
-            className={[
-              'xnavi-page-body',
-              classes.bodyDark,
-            ].join(' ')}
-            variant='body2'
-          >
-            1. Select travel experiences as keywords.<br/>
-            2. Select travel sequences as tag flows.<br/>
-            3. Plan a trip using experience flows.
-          </Typography>
-        </div>
-        <div
-          className={[
-            'xnavi-page',
-            'xnavi-publication',
-            classes.backgroundDark2,
-          ].join(' ')}
-        >
-          <Typography
-            className={[
-              'xnavi-page-title',
-              classes.title,
-            ].join(' ')}
-            variant='title'
-          >
-            more information...<br/><br/>
-          </Typography>
-          <div className='xnavi-publication-name'>
-            <a href='https://masatonomiyama.com' target='_blank'>
+            <div className='xnavi-publication-name'>
+              <a href='https://masatonomiyama.com' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Masato Nomiyama
+                </Typography>
+              </a>
+              <a href='https://totakke.net' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Toshiki Takeuchi
+                </Typography>
+              </a>
+              <a href='https://global.honda/' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Hiroyuki Onimaru
+                </Typography>
+              </a>
+              <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Tomohiro Tanikawa
+                </Typography>
+              </a>
+              <a href='https://www.cyber.t.u-tokyo.ac.jp/~narumi' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Takuji Narumi
+                </Typography>
+              </a>
+              <a href='https://twitter.com/_anohito' target='_blank'>
+                <Typography
+                  className={[
+                    'xnavi-page-title',
+                    classes.bodyHighlight
+                  ].join(' ')}
+                  variant='title'
+                >
+                  Michitaka Hirose
+                </Typography>
+              </a>
+            </div>
+            <div className='xnavi-publication-logo'>
+              <a href='http://ubicomp.org/ubicomp2018/' target='_blank'>
+                <img
+                  className='xnavi-publication-logo-image'
+                  src={ubicompLogo}
+                  alt='UbiComp2018'
+                />
+              </a>
+              <a href='https://www.u-tokyo.ac.jp' target='_blank'>
+                <img
+                  className='xnavi-publication-logo-image'
+                  src={utLogo}
+                  alt='The University of Tokyo'
+                />
+              </a>
+              <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
+                <img
+                  className='xnavi-publication-logo-image'
+                  src={cyberLogo}
+                  alt='Cyber Interface Lab.'
+                />
+              </a>
+            </div>
+            <a href='https://dl.acm.org/citation.cfm?id=3191759' target='_blank'>
               <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
+                className={classes.bodyHighlightThin}
+                variant='body2'
               >
-                Masato Nomiyama
-              </Typography>
-            </a>
-            <a href='https://totakke.net' target='_blank'>
-              <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
-              >
-                Toshiki Takeuchi
-              </Typography>
-            </a>
-            <a href='https://global.honda/' target='_blank'>
-              <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
-              >
-                Hiroyuki Onimaru
-              </Typography>
-            </a>
-            <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
-              <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
-              >
-                Tomohiro Tanikawa
-              </Typography>
-            </a>
-            <a href='https://www.cyber.t.u-tokyo.ac.jp/~narumi' target='_blank'>
-              <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
-              >
-                Takuji Narumi
-              </Typography>
-            </a>
-            <a href='https://twitter.com/_anohito' target='_blank'>
-              <Typography
-                className={[
-                  'xnavi-page-title',
-                  classes.bodyHighlight
-                ].join(' ')}
-                variant='title'
-              >
-                Michitaka Hirose
+                "Xnavi: Travel Planning System Based on Experience Flows"<br/>
+                Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 2.1 (2018)
               </Typography>
             </a>
           </div>
-          <div className='xnavi-publication-logo'>
-            <a href='http://ubicomp.org/ubicomp2018/' target='_blank'>
-              <img
-                className='xnavi-publication-logo-image'
-                src={ubicompLogo}
-                alt='UbiComp2018'
-              />
-            </a>
-            <a href='https://www.u-tokyo.ac.jp' target='_blank'>
-              <img
-                className='xnavi-publication-logo-image'
-                src={utLogo}
-                alt='The University of Tokyo'
-              />
-            </a>
-            <a href='https://www.cyber.t.u-tokyo.ac.jp' target='_blank'>
-              <img
-                className='xnavi-publication-logo-image'
-                src={cyberLogo}
-                alt='Cyber Interface Lab.'
-              />
-            </a>
-          </div>
-          <a href='https://dl.acm.org/citation.cfm?id=3191759' target='_blank'>
-            <Typography
-              className={classes.bodyHighlightThin}
-              variant='body2'
-            >
-              "Xnavi: Travel Planning System Based on Experience Flows"<br/>
-              Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 2.1 (2018)
-            </Typography>
-          </a>
         </div>
-      </div>
+      </DocumentTitle>
     )
   }
 }
