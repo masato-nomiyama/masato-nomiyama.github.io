@@ -55,7 +55,7 @@ const HomeWorksCard = props => {
         ].join(' ')}
       elevation={0}
     >
-      <Link to={link} target='_blank'>
+      <Link to={link}>
         <CardActionArea className={classes.actionArea}>
           <CardMedia
             component='img'

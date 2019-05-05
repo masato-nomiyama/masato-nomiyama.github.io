@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import AppBar from '@material-ui/core/AppBar'
 import IconButton from '@material-ui/core/IconButton'
 import MediaQuery from 'react-responsive'
@@ -63,7 +64,7 @@ class Menu extends PureComponent {
 
   renderListItem({ text }) {
     return (
-      <Link to={text}>
+      <HashLink to={`/#${text}`}>
         <div className='menu-list-item'>
           <Typography
             className={[
@@ -81,7 +82,7 @@ class Menu extends PureComponent {
             ].join(' ')}
           />
         </div>
-      </Link>
+      </HashLink>
     )
   }
 
