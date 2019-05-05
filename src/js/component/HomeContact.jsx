@@ -9,20 +9,33 @@ import { style } from '../theme'
 const customStyle = theme => {
   return {
     ...style,
+    title: {
+      margin: '24px 0 0',
+    },
+    body: {
+      margin: '8px 0',
+    },
   }
 }
 
 const renderItem = (props, item) => {
   return (
     <div className={`${props.className}-item`}>
-      <Typography variant='subheading'>
+      <Typography
+        variant='subheading'
+        className={[
+          `${props.className}-item-title`,
+          props.classes.title,
+        ].join(' ')}
+      >
         {item.title}
       </Typography>
       {item.link ? (
         <a href={item.link} target='_blank'>
           <Typography
             className={[
-              'home-contact-body',
+              `${props.className}-item-body`,
+              props.classes.body,
               props.classes.highlightBody,
             ].join(' ')}
             variant='body2'
@@ -31,7 +44,13 @@ const renderItem = (props, item) => {
           </Typography>
         </a>
       ) : (
-        <Typography variant='body2'>
+        <Typography
+          variant='body2'
+          className={[
+            `${props.className}-item-body`,
+            props.classes.body,
+          ].join(' ')}
+        >
           {item.body}
         </Typography>
       )}

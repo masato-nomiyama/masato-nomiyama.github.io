@@ -71,7 +71,7 @@ export const style = {
       ${theme.palette.secondary.A400}
     )`,
     margin: '2px 0 0',
-    height: '1px',
+    height: '2px',
   },
   highlightBody:  {
     transition: 'color 0.1s ease',
