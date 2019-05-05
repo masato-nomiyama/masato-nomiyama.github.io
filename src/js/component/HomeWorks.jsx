@@ -17,7 +17,7 @@ const HomeWorks = props => {
         link='/works/dress-of-ghosts'
         image={dressOfGhosts}
         title='生の装い'
-        caption='無機質な粒子に生を宿す'
+        caption='無機質な粒子に生を感じさせる'
         keywords={['Touché', 'SVM', '電磁石制御']}
       />
       <HomeWorksCard
@@ -25,7 +25,7 @@ const HomeWorks = props => {
         link='/works/my-feeling-cant-reach-you'
         image={myFeelingCantReachYou}
         title='伝わらないこの気持ち'
-        caption='言葉はかたちを失いその想いを伝える'
+        caption='言葉で伝えきれない想いにかたちを与える'
         keywords={['音声解析', '音声合成']}
       />
       <HomeWorksCard
@@ -33,7 +33,7 @@ const HomeWorks = props => {
         link='/works/xnavi'
         image={xnavi}
         title='Xnavi'
-        caption='体験をつなげて旅行計画を作る'
+        caption='気になる体験から旅行を計画する'
         keywords={['自動車移動履歴', '自然言語処理', 'アソシエーション分析']}
       />
       <HomeWorksCard
@@ -41,7 +41,7 @@ const HomeWorks = props => {
         link='/works/maestro-of-time'
         image={maestroOfTime}
         title='時の指揮者'
-        caption='クロスモーダルに時間の流れを体感する'
+        caption='時間の流れを自在に操る'
         keywords={['Kinect', 'ムーブメント制御', 'AR']}
       />
     </div>

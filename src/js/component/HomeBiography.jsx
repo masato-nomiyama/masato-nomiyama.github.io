@@ -48,15 +48,6 @@ const HomeBiography = props => {
         body: 'Takram 参加',
       })}
       {renderItem(props, {
-        title: '2018.11',
-        body: '東京大学制作展2018 参加',
-        isEmptyTitle: true,
-      })}
-      {renderItem(props, {
-        title: '2018.10',
-        body: 'UbiComp 2018 参加',
-      })}
-      {renderItem(props, {
         title: '2018.09',
         body: '東京大学大学院 情報理工学系研究科 知能機械情報学専攻 修士号取得',
       })}
@@ -67,15 +58,6 @@ const HomeBiography = props => {
       {renderItem(props, {
         title: '2016.11',
         body: '富士フイルム インフォマティクス研究所 インターン 参加',
-      })}
-      {renderItem(props, {
-        title: '2016.11',
-        body: '東京大学制作展2016 参加',
-        isEmptyTitle: true,
-      })}
-      {renderItem(props, {
-        title: '2016.09',
-        body: 'UbiComp 2016 参加',
       })}
       {renderItem(props, {
         title: '2016.04',

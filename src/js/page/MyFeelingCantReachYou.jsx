@@ -28,6 +28,7 @@ class MyFeelingCantReachYou extends Works {
     ]
     this.creators = [
       '野見山真人 / 東京大学大学院 情報理工学系研究科',
+      '冨永健 / 東京大学大学院 学際情報学府',
     ]
     this.exhibitions = [
       '東京大学制作展2016, 東京大学 / 2016年11月17日-11月21日',

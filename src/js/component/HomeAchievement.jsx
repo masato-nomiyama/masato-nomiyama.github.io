@@ -74,7 +74,7 @@ const HomeAchievement = props => {
         ],
       })}
       {renderItem(props, {
-        title: '国際会議（ポスター）',
+        title: '国際会議',
         bodies: [
           {
             name: 'Masato Nomiyama, Toshiki Takeuchi, Hiroyuki Onimaru, Tomohiro Tanikawa, Takuji Narumi, and Michitaka Hirose, “Travel Planning System Considering Experience Flows Based on Driving Histories,” The 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp 2016), Heidelberg, Germany, Sep. 2016.',
@@ -111,7 +111,7 @@ const HomeAchievement = props => {
         title: 'その他',
         bodies: [
           {
-            name: '野見山 真人, "SNSにまで進出した筋肉の承認欲求を満たすための画像処理技術：筋肉専用プリクラ「morimori」," ANORON: International Journal on Desire-driven Innovation Vol.2 No.1, 2016年8月',
+            name: '野見山 真人, "SNSにまで進出した筋肉の承認欲求を満たすための画像処理技術：筋肉専用プリクラ「morimori」", ANORON: International Journal on Desire-driven Innovation Vol.2 No.1, 2016年8月',
           },
         ],
       })}
