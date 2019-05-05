@@ -23,6 +23,13 @@ const homeStyle = theme => {
 }
 
 class Home extends PureComponent {
+  componentDidMount() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
+  }
+
   renderHeader({ header }) {
     return (
       <div className='home-header'>
