@@ -17,10 +17,7 @@ ReactDOM.render(
       <HashRouter hashType='noslash'>
         <Switch>
           <Route exact path='/works/xnavi' component={Xnavi} />
-          <Route render={props => <App {...{
-            ...props,
-            history,
-          }} />} />
+          <Route render={props => <App {...props} />} />
         </Switch>
       </HashRouter>
     </DocumentTitle>
