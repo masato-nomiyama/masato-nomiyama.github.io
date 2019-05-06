@@ -41,7 +41,7 @@ const HomeWorks = props => {
         className={cardClassName}
         link='/works/morimori'
         image={morimori}
-        title='筋肉専用プリクラ morimori'
+        title='筋肉プリクラ morimori'
         caption='自分の体をよりよく見せる'
         keywords={['画像認識', '画像加工']}
       />
