@@ -16,23 +16,16 @@ import { style } from '../theme'
 const cardStyle = theme => {
   return {
     ...style,
-    actionArea: {
-      fontSize: '100%',
-      color: 'rgb(0, 0, 0, 0.99)',
-    },
-    card: {
-      maxWidth: 316,
-    },
-    media: {
-      height: 237,
-      objectFit: 'cover',
-    },
-    content: {
-      backgroundColor: theme.palette.background.default,
+    title: {
+      color: theme.palette.primary.light,
+      margin: '48px 0 6px',
     },
     caption: {
-      color: '#000',
-      padding: '2px 0 8px'
+      color: theme.palette.primary.light,
+      margin: '0 0 48px',
+    },
+    keyword: {
+      color: theme.palette.primary[400],
     },
   }
 }
@@ -48,36 +41,64 @@ const HomeWorksCard = props => {
     keywords,
   } = props
   return (
-    <Card
-      className={[
-          className,
-          classes.card,
-        ].join(' ')}
-      elevation={0}
-    >
-      <Link to={link}>
-        <CardActionArea className={classes.actionArea}>
-          <CardMedia
-            component='img'
-            alt={title}
-            className={classes.media}
-            image={image}
-            title={title}
-          />
-          <CardContent className={classes.content}>
-              <Typography variant='display1'>
+    <div className={className}>
+      <div className={[
+        `${className}-line-top`,
+        classes.verticalLine,
+      ].join(' ')} />
+      <div className={`${className}-box`}>
+        <div className={[
+          `${className}-line-left`,
+          classes.horizontalLine,
+        ].join(' ')} />
+        <div
+          className={`${className}-content`}
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <Link to={link}>
+            <div className={`${className}-content-textbox`}>
+              <Typography
+                variant='display1'
+                className={[
+                  `${className}-content-title`,
+                  classes.title,
+                ].join(' ')}
+              >
                 {title}
               </Typography>
-              <Typography variant='body2' className={classes.caption}>
+              <Typography
+                variant='body2'
+                className={[
+                  `${className}-content-caption`,
+                  classes.caption,
+                ].join(' ')}
+              >
                 {caption}
               </Typography>
-              <Typography variant='caption'>
-                {keywords.join('/')}
+              <Typography
+                variant='caption'
+                className={[
+                  `${className}-content-keyword`,
+                  classes.keyword,
+                ].join(' ')}
+              >
+                {keywords.join(' / ')}
               </Typography>
-            </CardContent>
-        </CardActionArea>
-      </Link>
-    </Card>
+            </div>
+          </Link>
+        </div>
+        <div className={[
+          `${className}-line-right`,
+          classes.horizontalLine,
+        ].join(' ')} />
+      </div>
+      <div className={[
+        `${className}-line-bottom`,
+        classes.verticalLine,
+      ].join(' ')} />
+    </div>
   )
 }
 

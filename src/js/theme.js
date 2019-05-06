@@ -73,6 +73,12 @@ export const style = {
     margin: '2px 0 0',
     height: '2px',
   },
+  verticalLine: {
+    background: theme.palette.primary.A400,
+  },
+  horizontalLine: {
+    background: theme.palette.primary.A400,
+  },
   highlightBody:  {
     transition: 'color 0.1s ease',
     color: theme.palette.secondary.dark,

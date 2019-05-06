@@ -1,0 +1,133 @@
+// Copyright (C) 2018-Present Masato Nomiyama
+
+.home-works-card
+  margin 12px 6px 0 0
+  height 237px
+  width calc(50% - 6px)
+  --duration 0.6s
+  --line-width 3px
+
+  &-box
+    display flex
+    flex-direction row
+    width 100%
+    height 100%
+
+  &-line
+    &-top
+      width 0
+      height var(--line-width)
+
+    &-bottom
+      width 0
+      height var(--line-width)
+
+    &-right
+      height 0
+      width var(--line-width)
+
+    &-left
+      height 0
+      width var(--line-width)
+
+  &-content
+    width calc(100% - var(--line-width) * 2)
+    height 100%
+    background-position center
+    background-size cover
+
+    &-textbox
+      background-color rgba(0,0,0,0.0)
+      padding 36px 48px 36px 24px
+      width calc(100% - 36px * 2)
+      height calc(100% - 36px * 2)
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+      transition var(--duration)
+      transition-timing-function ease-in-out
+
+    &-title
+      opacity 0.0
+      transition var(--duration)
+      align-self flex-start
+
+    &-caption
+      opacity 0.0
+      transition var(--duration)
+      align-self flex-start
+
+    &-keyword
+      opacity 0.0
+      transition var(--duration)
+      align-self flex-end
+      text-align end
+
+.home-works-card:hover .home-works-card
+  &-line
+    &-top
+      animation-name goRoundTop
+      animation-duration var(--duration)
+      animation-timing-function ease-in
+      animation-fill-mode forwards
+
+    &-right
+      animation-name goRoundRight
+      animation-duration var(--duration)
+      animation-timing-function ease-out
+      animation-fill-mode forwards
+
+    &-bottom
+      animation-name goRoundBottom
+      animation-duration var(--duration)
+      animation-timing-function ease-out
+      animation-fill-mode forwards
+
+    &-left
+      animation-name goRoundLeft
+      animation-duration var(--duration)
+      animation-timing-function ease-in
+      animation-fill-mode forwards
+
+  &-content
+    &-textbox
+      background-color rgba(0,0,0,0.5)
+      padding 36px
+
+    &-title
+    &-caption
+    &-keyword
+      opacity 1.0
+
+@media screen and (max-width 600px)
+  .home-works-card
+    width calc(100% - 6px)
+
+@keyframes goRoundTop
+  0%
+    width 0
+
+  50%,100%
+    width 100%
+
+@keyframes goRoundRight
+  0%,50%
+    height 0
+
+  100%
+    height 100%
+
+@keyframes goRoundBottom
+  0%,50%
+    width 0
+
+  100%
+    width 100%
+
+@keyframes goRoundLeft
+  0%
+    height 0
+
+  50%,100%
+    height 100%
