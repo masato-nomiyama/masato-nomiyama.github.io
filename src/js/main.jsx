@@ -2,9 +2,9 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import DocumentTitle from 'react-document-title'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { MuiThemeProvider } from '@material-ui/core/styles'
+import DocumentTitle from 'react-document-title'
 
 import '../css/main.styl'
 import { theme } from './theme'
