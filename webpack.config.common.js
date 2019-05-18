@@ -100,6 +100,11 @@ module.exports = {
         to: '',
       },
       {
+        context: path.resolve(__dirname, 'src', 'js'),
+        from: 'delighters.js',
+        to: '',
+      },
+      {
         context: path.resolve(__dirname, 'src'),
         from: 'CNAME',
         to: '',

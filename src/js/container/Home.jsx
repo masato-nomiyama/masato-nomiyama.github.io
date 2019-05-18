@@ -28,11 +28,23 @@ class Home extends PureComponent {
       top: 0,
       behavior: 'instant',
     })
+
+    var script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'delighters.js'
+    script.id = 'delighters'
+    document.getElementsByTagName('head')[0].appendChild(script)
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName('head')[0].removeChild(
+      document.getElementById('delighters')
+    )
   }
 
   renderHeader({ header }) {
     return (
-      <div className='home-header'>
+      <div className='home-header' data-delighter>
         <Typography
           className={this.props.classes.header}
           variant='headline'
@@ -50,9 +62,8 @@ class Home extends PureComponent {
   }
 
   renderItem({ header }) {
-    const className= 'home-item'
     return (
-      <div className={className} id={header}>
+      <div className='home-item' id={header} data-delighter>
         {this.renderHeader({ header })}
         {(() => {
           switch(header) {

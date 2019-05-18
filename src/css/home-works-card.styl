@@ -1,11 +1,12 @@
 // Copyright (C) 2018-Present Masato Nomiyama
 
 .home-works-card
+  --duration 0.6s
+  --line-width 3px
   margin 12px 6px 0 0
   height 237px
   width calc(50% - 6px)
-  --duration 0.6s
-  --line-width 3px
+  transition var(--duration)
 
   &-box
     display flex
@@ -15,20 +16,35 @@
 
   &-line
     &-top
-      width 0
-      height var(--line-width)
-
     &-bottom
       width 0
       height var(--line-width)
+      animation-duration var(--duration)
+      animation-fill-mode forwards
 
     &-right
-      height 0
-      width var(--line-width)
-
     &-left
       height 0
       width var(--line-width)
+      animation-duration var(--duration)
+      animation-fill-mode forwards
+
+  &-line
+    &-top
+      animation-name crossOutTop
+      animation-timing-function ease-out
+
+    &-right
+      animation-name crossOutRight
+      animation-timing-function ease-in
+
+    &-bottom
+      animation-name crossOutBottom
+      animation-timing-function ease-in
+
+    &-left
+      animation-name crossOutLeft
+      animation-timing-function ease-out
 
   &-content
     width calc(100% - var(--line-width) * 2)
@@ -67,28 +83,20 @@
 .home-works-card:hover .home-works-card
   &-line
     &-top
-      animation-name goRoundTop
-      animation-duration var(--duration)
+      animation-name crossInTop
       animation-timing-function ease-in
-      animation-fill-mode forwards
 
     &-right
-      animation-name goRoundRight
-      animation-duration var(--duration)
+      animation-name crossInRight
       animation-timing-function ease-out
-      animation-fill-mode forwards
 
     &-bottom
-      animation-name goRoundBottom
-      animation-duration var(--duration)
+      animation-name crossInBottom
       animation-timing-function ease-out
-      animation-fill-mode forwards
 
     &-left
-      animation-name goRoundLeft
-      animation-duration var(--duration)
+      animation-name crossInLeft
       animation-timing-function ease-in
-      animation-fill-mode forwards
 
   &-content
     &-textbox
@@ -104,30 +112,106 @@
   .home-works-card
     width calc(100% - 6px)
 
-@keyframes goRoundTop
+  .home-works-card.delighter.started .home-works-card
+    &-line
+      &-top
+        animation-name crossInTop
+        animation-timing-function ease-in
+
+      &-right
+        animation-name crossInRight
+        animation-timing-function ease-out
+
+      &-bottom
+        animation-name crossInBottom
+        animation-timing-function ease-out
+
+      &-left
+        animation-name crossInLeft
+        animation-timing-function ease-in
+
+    &-content
+      &-textbox
+        background-color rgba(0,0,0,0.5)
+        padding 36px
+
+      &-title
+      &-caption
+      &-keyword
+        opacity 1.0
+
+  .home-works-card.delighter.ended .home-works-card
+    &-line
+      &-top
+        animation-name crossOutTop
+        animation-timing-function ease-out
+
+      &-right
+        animation-name crossOutRight
+        animation-timing-function ease-in
+
+      &-bottom
+        animation-name crossOutBottom
+        animation-timing-function ease-in
+
+      &-left
+        animation-name crossOutLeft
+        animation-timing-function ease-out
+
+    &-content
+      &-textbox
+        background-color rgba(0,0,0,0.0)
+        padding 36px 48px 36px 24px
+
+      &-title
+      &-caption
+      &-keyword
+        opacity 0.0
+
+@keyframes crossInTop
   0%
     width 0
-
   50%,100%
     width 100%
 
-@keyframes goRoundRight
+@keyframes crossInRight
   0%,50%
     height 0
-
   100%
     height 100%
 
-@keyframes goRoundBottom
+@keyframes crossInBottom
   0%,50%
     width 0
-
   100%
     width 100%
 
-@keyframes goRoundLeft
+@keyframes crossInLeft
   0%
     height 0
-
   50%,100%
     height 100%
+
+@keyframes crossOutTop
+  0%,50%
+    width 100%
+  100%
+    width 0%
+
+@keyframes crossOutRight
+  0%
+    height 100%
+  50%,100%
+    height 0
+
+@keyframes crossOutBottom
+  0%
+    width 100%
+  50%,100%
+    width 0
+
+@keyframes crossOutLeft
+  0%,50%
+    height 100%
+  100%
+    height 0

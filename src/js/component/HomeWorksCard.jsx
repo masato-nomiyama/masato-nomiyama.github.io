@@ -41,7 +41,7 @@ const HomeWorksCard = props => {
     keywords,
   } = props
   return (
-    <div className={className}>
+    <div className={className} data-delighter>
       <div className={[
         `${className}-line-top`,
         classes.verticalLine,
