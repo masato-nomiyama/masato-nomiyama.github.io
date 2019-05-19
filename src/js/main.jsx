@@ -7,6 +7,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import DocumentTitle from 'react-document-title'
 
 import '../css/main.styl'
+import '../css/main.scss'
 import { theme } from './theme'
 import App from './container/App'
 import Xnavi from './container/Xnavi'

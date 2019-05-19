@@ -20,7 +20,7 @@ module.exports = {
     extensions: [
       '.js',
       '.jsx',
-    ]
+    ],
   },
   module: {
     rules: [
@@ -66,7 +66,30 @@ module.exports = {
         ],
       },
       {
-        test: /\.styl$/,
+        test: /\.scss/,
+        exclude: /node_modules/,
+        use: [
+          'css-hot-loader',
+          ...ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: { sourceMap: true },
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: ['./node_modules'],
+                  sourceMap: true,
+                },
+              },
+            ],
+          }),
+        ],
+      },
+      {
+        test: /\.styl/,
         exclude: /node_modules/,
         use: [
           'css-hot-loader',

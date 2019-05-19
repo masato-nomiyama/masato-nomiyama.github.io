@@ -4,11 +4,15 @@ import React, { PureComponent } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-import AppBar from '@material-ui/core/AppBar'
-import IconButton from '@material-ui/core/IconButton'
 import MediaQuery from 'react-responsive'
-import MenuIcon from '@material-ui/icons/Menu'
+import MaterialIcon from '@material/react-material-icon'
 import Toolbar from '@material-ui/core/Toolbar'
+import TopAppBar, {
+  TopAppBarIcon,
+  TopAppBarRow,
+  TopAppBarSection,
+  TopAppBarTitle,
+} from '@material/react-top-app-bar'
 import Typography from '@material-ui/core/Typography'
 
 import { style } from '../theme'
@@ -42,12 +46,13 @@ const menuStyle = theme => {
 }
 
 class Menu extends PureComponent {
-  renderTitle() {
+  renderTitle({ isMobile }) {
+    const prefix = isMobile ? 'mobile-menu' : 'menu'
     return (
       <Link to='/'>
-        <div className='menu-title'>
+        <div className={`${prefix}-title`}>
           <img
-            className='menu-title-logo'
+            className={`${prefix}-title-logo`}
             src={logo}
             alt='Masato Nomiyama'
           />
@@ -62,14 +67,18 @@ class Menu extends PureComponent {
     )
   }
 
-  renderListItem({ text }) {
+  renderListItem({ isMobile, text }) {
+    const prefix = isMobile ? 'mobile-menu' : 'menu'
     return (
       <HashLink to={`/#${text}`}>
-        <div className='menu-list-item'>
+        <div
+          className={`${prefix}-list-item`}
+          onClick={() => {this.props.onClose()}}
+        >
           <Typography
             className={[
               this.props.classes.list,
-              'menu-list-item-text',
+              `${prefix}-list-item-text`,
             ].join(' ')}
             variant='title'
           >
@@ -78,7 +87,7 @@ class Menu extends PureComponent {
           <div
             className={[
               this.props.classes.line,
-              'menu-list-item-line',
+              `${prefix}-list-item-line`,
             ].join(' ')}
           />
         </div>
@@ -86,31 +95,39 @@ class Menu extends PureComponent {
     )
   }
 
+  renderList({ isMobile }) {
+    return (
+      <div>
+        {this.renderTitle({ isMobile })}
+        <div className='menu-list'>
+          {this.renderListItem({ isMobile, text: 'profile' })}
+          {this.renderListItem({ isMobile, text: 'works' })}
+          {this.renderListItem({ isMobile, text: 'biography' })}
+          {this.renderListItem({ isMobile, text: 'achievements' })}
+          {this.renderListItem({ isMobile, text: 'contact' })}
+        </div>
+      </div>
+    )
+  }
+
   renderHeader() {
     return (
-      <AppBar
-        className={this.props.classes.background}
-        elevation={0}
-        position='relative'
-      >
-        <Toolbar>
-          <Typography
-            className={[
-              'menu-header-title',
-              this.props.classes.headerTitle,
-            ].join(' ')}
-            variant='title'
-          >
-            Masato Nomiyama
-          </Typography>
-          <IconButton
-            color='inherit'
-            aria-label='Menu'
-          >
-            <MenuIcon/>
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <div>
+        <TopAppBar>
+          <TopAppBarRow>
+            <TopAppBarSection align='start'>
+              <TopAppBarIcon navIcon tabIndex={0}>
+                <MaterialIcon
+                  hasRipple
+                  icon='menu'
+                  onClick={() => {this.props.onOpen()}}
+                />
+              </TopAppBarIcon>
+              <TopAppBarTitle>Masato Nomiyama</TopAppBarTitle>
+            </TopAppBarSection>
+          </TopAppBarRow>
+        </TopAppBar>
+      </div>
     )
   }
 
@@ -122,19 +139,16 @@ class Menu extends PureComponent {
           this.props.className,
         ].join(' ')}
       >
-        <MediaQuery query='(max-width: 600px)'>
-          {this.renderHeader()}
-        </MediaQuery>
-        <MediaQuery query='(min-width: 600px)'>
-          {this.renderTitle()}
-          <div className='menu-list'>
-            {this.renderListItem({ text: 'profile' })}
-            {this.renderListItem({ text: 'works' })}
-            {this.renderListItem({ text: 'biography' })}
-            {this.renderListItem({ text: 'achievements' })}
-            {this.renderListItem({ text: 'contact' })}
+        {this.props.shouldRenderList ? this.renderList({ isMobile: true }) : (
+          <div>
+            <MediaQuery query='(max-width: 600px)'>
+              {this.renderHeader()}
+            </MediaQuery>
+            <MediaQuery query='(min-width: 600px)'>
+              {this.renderList({ isMobile: false })}
+            </MediaQuery>
           </div>
-        </MediaQuery>
+        )}
       </div>
     )
   }

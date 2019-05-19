@@ -1,0 +1,15 @@
+// Copyright (C) 2018-Present Masato Nomiyama
+
+$mdc-theme-primary: #fafafa;
+
+@import '~@material/react-drawer/index';
+@import '~@material/react-material-icon/index';
+@import '~@material/react-top-app-bar/index';
+@import "~@material/react-drawer/dist/drawer.css";
+@import '~@material/react-material-icon/dist/material-icon.css';
+@import '~@material/react-top-app-bar/dist/top-app-bar.css';
+
+.mdc-top-app-bar__title {
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+}
