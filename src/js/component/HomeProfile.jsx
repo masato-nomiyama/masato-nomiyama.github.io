@@ -10,28 +10,40 @@ import { style } from '../theme'
 const customStyle = theme => {
   return {
     ...style,
+    profileBody: {
+      fontFamily: [
+        'YuMincho',
+      ],
+      fontWeight: 'normal',
+    },
   }
 }
 
 const renderCopywrite = props => {
   return (
     <div className={`${props.className}-item`}>
-      <Typography variant='body2'>
-        ひとを知り、人をつくる。<br/>
+      <Typography variant='title' className={props.classes.profileBody}>
+        ヒトを知り、ひとをつくる。<br/><br/>
+      </Typography>
+      <Typography variant='body2' className={props.classes.profileBody}>
+        ヒトはなぜ、旅に出たくなるのか。<br/>
+        ヒトはなぜ、身のまわりの物に生を感じるのか。<br/>
+        ヒトはなぜ、想いを誰かに伝えたくなるのか。<br/>
+        実は私たちは、自分のことをよく知らない。<br/>
+        しかし、だからこそヒトの可能性は未知数だともいえる。<br/>
         <br/>
-        私たちは自分のことでさえよく知らない。<br/>
-        なぜ嬉しく感じるのか、なぜ話したくなるのか、なぜ決断できるのか。<br/>
-        そこにはひとのこころのメカニズムがある。<br/>
-        もしそれを解明しテクノロジーで拡張することができれば、<br/>
-        ひとは限界を超えてもっと自由に人らしく活動できるのではないだろうか。<br/>
+        もし、ヒトの限界を決めるメカニズムを解明し、<br/>
+        もし、テクノロジーでその限界を拡張できたなら、<br/>
+        もっと自由に、もっと創造的に、<br/>
+        ヒトはその可能性を引き出せるのではないだろうか。<br/>
         <br/>
-        『こころの拡張』と『こころの投影』、問いに挑むための2つのアプローチ。<br/>
-        『こころの拡張』は、知覚や認知の範囲を広げる内へのアプローチ。<br/>
-        『こころの投影』は、知覚や認知の様子を伝える外へのアプローチ。<br/>
-        これら2つのアプローチから、ひとが人らしくいられる未来をつくる。<br/>
+        この問いに挑むために考えるのは、<br/>
+        こころを「澄まし」、こころを「溶かす」テクノロジー。<br/>
+        知覚や認知の限界を広げることで、これまで得られなかった新たな気づきにこころを澄まし、<br/>
+        認知や感情にかたちを与えることで、想いと現実の境界を溶かす。<br/>
         <br/>
-        ソフトウェア・ハードウェア問わず、幅広い分野でコンセプトの構築とプロトタイプの制作を手がける。<br/>
-        2018年に知能機械情報学を修了し東京大学大学院を卒業。同年よりTakramに参加。<br/>
+        生物であるヒトを超え、もっと自由でゆたかなひとへ。<br/>
+        そんなひとであふれる未来をつくる。
       </Typography>
     </div>
   )
@@ -40,14 +52,14 @@ const renderCopywrite = props => {
 const renderImage = props => {
   return (
     <div className={`${props.className}-item`}>
-      <Typography variant='title'>
-        Creative Technologist / Artist<br/><br/>
-      </Typography>
       <img
         className={`${props.className}-image`}
         src={image}
         alt='Profile'
       />
+      <Typography variant='body2'>
+        Creative Technologist / Artist<br/>
+      </Typography>
     </div>
   )
 }
@@ -55,8 +67,8 @@ const renderImage = props => {
 const Profile = props => {
   return (
     <div className={props.className}>
-      {renderImage(props)}
       {renderCopywrite(props)}
+      {renderImage(props)}
     </div>
   )
 }
