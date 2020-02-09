@@ -22,43 +22,43 @@ export const theme = createMuiTheme({
       'sans-serif',
     ].join(','),
     display4: {
-      fontSize: '2em',
+      fontSize: '2.5em',
     },
     display3: {
-      fontSize: '1.75em',
+      fontSize: '2.25em',
     },
     display2: {
-      fontSize: '1.55em',
+      fontSize: '2em',
     },
     display1: {
-      fontSize: '1.35em',
+      fontSize: '1.55em',
     },
     headline: {
       fontSize: '1.15em',
     },
     title: {
       color: grey[800],
-      fontSize: '0.95em',
+      fontSize: '1.05em',
       fontWeight: 'bold',
     },
     subheading: {
       color: grey[800],
-      fontSize: '0.85em',
+      fontSize: '0.95em',
       fontWeight: 'bold',
     },
     body2: {
       color: grey[600],
-      fontSize: '0.75em',
+      fontSize: '0.8em',
     },
     body1: {
-      fontSize: '0.75em',
+      fontSize: '0.8em',
       textAlign: 'right',
     },
     caption: {
-      fontSize: '0.7em',
+      fontSize: '0.75em',
     },
     button: {
-      fontSize: '0.75em',
+      fontSize: '0.8em',
     },
   },
 })
