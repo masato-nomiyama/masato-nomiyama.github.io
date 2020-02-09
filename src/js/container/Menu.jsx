@@ -82,7 +82,7 @@ class Menu extends PureComponent {
             ].join(' ')}
             variant='title'
           >
-            {text}
+            {text.charAt(0).toUpperCase() + text.slice(1)}
           </Typography>
           <div
             className={[

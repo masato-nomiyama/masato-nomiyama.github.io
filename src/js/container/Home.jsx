@@ -49,7 +49,7 @@ class Home extends PureComponent {
           className={this.props.classes.header}
           variant='headline'
         >
-          {header}
+          {header.charAt(0).toUpperCase() + header.slice(1)}
         </Typography>
         <div
           className={[
