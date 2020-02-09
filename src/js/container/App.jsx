@@ -11,6 +11,7 @@ import DressOfGhosts from '../page/DressOfGhosts'
 import MaestroOfTime from '../page/MaestroOfTime'
 import Morimori from '../page/Morimori'
 import MyFeelingCantReachYou from '../page/MyFeelingCantReachYou'
+import Utsuri from '../page/Utsuri'
 import Exception from '../component/Exception'
 import Home from './Home'
 import Menu from './Menu'
@@ -40,6 +41,10 @@ export default class App extends PureComponent {
             path='/works'
             render={props => (
               <Switch>
+                <Route
+                  exact path='/works/utsuri'
+                  render={props => <Utsuri className='utsuri' {...props} />}
+                />
                 <Route
                   exact path='/works/dress-of-ghosts'
                   render={props => <DressOfGhosts className='dress-of-ghosts' {...props} />}

@@ -11,6 +11,9 @@ import dressOfGhosts from '../../img/dress-of-ghosts.png'
 export const worksStyle = theme => {
   return {
     ...style,
+    title: {
+      margin: '0 0 16px',
+    },
     description: {
       margin: '0 0 16px',
     },
@@ -24,11 +27,11 @@ export default class Works extends PureComponent {
   constructor() {
     super()
     this.title = null
-    this.image = null
+    this.images = []
     this.descriptions = []
     this.creators = []
     this.exhibitions = []
-    this.movie = null
+    this.movies = []
     this.technology = null
     this.technologyImage = null
   }
@@ -41,16 +44,27 @@ export default class Works extends PureComponent {
   }
 
   renderTitle() {
+    const { classes } = this.props
+    const components = []
+    for (let i = 0; i < this.images.length; ++i) {
+      components.push(
+        <img
+          key={`image${i}`}
+          className='works-image'
+          src={this.images[i]}
+          alt={`${this.title}${i}`}
+        />
+      )
+    }
     return (
       <div className='works-item'>
-        <Typography variant='display1' className='works-title'>
+        <Typography variant='display1' className={[
+          'works-title',
+          classes.title,
+        ].join(' ')}>
           {this.title}
         </Typography>
-        <img
-          className='works-image'
-          src={this.image}
-          alt={this.title}
-        />
+        {components}
       </div>
     )
   }
@@ -110,7 +124,7 @@ export default class Works extends PureComponent {
     )
   }
 
-  renderExhibition() {
+  renderExhibitions() {
     const { classes } = this.props
     const components = []
     for (let i = 0; i < this.exhibitions.length; i += 1) {
@@ -144,9 +158,23 @@ export default class Works extends PureComponent {
     }
   }
 
-  renderMovie() {
+  renderMovies() {
     const { classes } = this.props
-    if (this.movie) {
+    const components = []
+    for (let i = 0; i < this.movies.length; ++i) {
+      components.push(
+        <YouTube
+          key={`movie${i}`}
+          className='works-movie'
+          containerClassName='works-movie-wrapper'
+          videoId={this.movies[i]}
+          opts={{
+            playerVars: { autoplay: 0, rel: 0 },
+          }}
+        />
+      )
+    }
+    if (this.movies.length > 0) {
       return (
         <div className='works-item'>
           <Typography
@@ -158,14 +186,7 @@ export default class Works extends PureComponent {
           >
             MOVIE
           </Typography>
-          <YouTube
-            className='works-movie'
-            containerClassName='works-movie-wrapper'
-            videoId={this.movie}
-            opts={{
-              playerVars: { autoplay: 0, rel: 0 },
-            }}
-          />
+          {components}
         </div>
       )
     }
@@ -216,8 +237,8 @@ export default class Works extends PureComponent {
           {this.renderTitle()}
           {this.renderDescriptions()}
           {this.renderCreators()}
-          {this.renderExhibition()}
-          {this.renderMovie()}
+          {this.renderExhibitions()}
+          {this.renderMovies()}
           {this.renderTechnology()}
         </div>
       </DocumentTitle>
