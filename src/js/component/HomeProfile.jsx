@@ -10,10 +10,13 @@ import { style } from '../theme'
 const customStyle = theme => {
   return {
     ...style,
+    profileTitle: {
+      fontFamily: ['YuMincho'],
+      fontWeight: 'normal',
+      margin: '0 0 12px',
+    },
     profileBody: {
-      fontFamily: [
-        'YuMincho',
-      ],
+      fontFamily: ['YuMincho'],
       fontWeight: 'normal',
     },
   }
@@ -22,7 +25,7 @@ const customStyle = theme => {
 const renderCopywrite = props => {
   return (
     <div className={`${props.className}-item`}>
-      <Typography variant='title' className={props.classes.profileBody}>
+      <Typography variant='title' className={props.classes.profileTitle}>
         ひとに寄り添うエンジニアリング<br/><br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
@@ -41,7 +44,7 @@ const renderCopywrite = props => {
         うつろう心を捉えることで感性の力を拡張する。<br/>
         <br/>
         感性に根ざしたエンジニアリングで、<br/>
-        ひとの暮らしをもっと豊かに。<br/>
+        ひとの暮らしを、もっと豊かに。<br/>
       </Typography>
     </div>
   )
