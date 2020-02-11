@@ -27,25 +27,25 @@ const renderCopywrite = props => {
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
         私たちの暮らしは<br/>
-        私たちの持つ感性に根ざしている。<br/>
+        私たちの持つ感性に根ざしている<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
         突き動かされるように誰かに想いを伝えたり<br/>
         日々の些細な変化に風情を感じたり<br/>
-        偶然の出会いに胸を打たれたりする。<br/>
+        偶然の出会いに胸を打たれたり<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
         もしこうした感性をエンジニアリングできたら<br/>
-        ひとはもっと豊かに暮らせるのではないだろうか。<br/>
+        ひとはもっと豊かに暮らせるのではないだろうか<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
-        もし、伝えきれない心の機微まで分かち合えたら。<br/>
-        もし、忙しい日々のなかでも環境の変化を楽しめたら。<br/>
-        もし、感動的な体験を前もって計画できたら。<br/>
+        もし、伝えきれない心の機微まで分かち合えたら<br/>
+        もし、忙しい日々のなかでも環境の変化を楽しめたら<br/>
+        もし、感動的な体験を前もって計画できたら<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
         ひとに寄り添う「感性のエンジニアリング」で<br/>
-        暮らしをもっと豊かに。<br/>
+        暮らしをもっと豊かに変えていく<br/>
       </Typography>
     </div>
   )
