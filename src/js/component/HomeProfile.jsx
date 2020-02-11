@@ -35,7 +35,7 @@ const renderCopywrite = props => {
         偶然の出会いに胸を打たれたり<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
-        もしこうした感性をエンジニアリングできたら<br/>
+        こうした感性をエンジニアリングできたら<br/>
         ひとはもっと豊かに暮らせるのではないだろうか<br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
