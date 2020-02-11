@@ -11,9 +11,9 @@ export const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      '-apple-system', 'BlinkMacSystemFont', '"Helvetica Neue"',
-      '"Yu Gothic"', 'YuGothic', 'Arial',
-      'sans-serif',
+      '"Helvetica Neue"',
+      'a-otf-gothic-bbb-pr6n',
+      'Arial', 'sans-serif',
     ].join(','),
     display4: {
       fontSize: '2.5em',
@@ -26,33 +26,47 @@ export const theme = createMuiTheme({
     },
     display1: {
       fontSize: '1.55em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     headline: {
       fontSize: '1.15em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     title: {
       color: grey[800],
       fontSize: '1.05em',
-      fontWeight: 'bold',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     subheading: {
       color: grey[800],
-      fontSize: '0.95em',
-      fontWeight: 'bold',
+      fontSize: '0.85em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     body2: {
       color: grey[600],
       fontSize: '0.8em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     body1: {
       fontSize: '0.8em',
+      fontStyle: 'normal',
+      fontWeight: 400,
       textAlign: 'right',
     },
     caption: {
       fontSize: '0.75em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
     button: {
       fontSize: '0.8em',
+      fontStyle: 'normal',
+      fontWeight: 400,
     },
   },
 })

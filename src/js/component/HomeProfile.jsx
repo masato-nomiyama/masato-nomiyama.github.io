@@ -11,6 +11,9 @@ const customStyle = theme => {
   return {
     ...style,
     profileTitle: {
+      margin: '0 0 6px',
+    },
+    profileBody: {
       margin: '0 0 12px',
     },
   }

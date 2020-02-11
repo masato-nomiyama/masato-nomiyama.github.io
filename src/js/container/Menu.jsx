@@ -20,7 +20,6 @@ import logo from '../../img/logo.png'
 
 const titleStyle = {
   color: '#000',
-  fontWeight: 'normal',
   letterSpacing: '2.5px',
 }
 const menuStyle = theme => {
@@ -34,7 +33,6 @@ const menuStyle = theme => {
     },
     list: {
       color: theme.palette.primary[800],
-      fontWeight: 'normal',
       fontVariantLigatures: 'none',
       letterSpacing: '1.5px',
     },
