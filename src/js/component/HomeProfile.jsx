@@ -11,13 +11,7 @@ const customStyle = theme => {
   return {
     ...style,
     profileTitle: {
-      fontFamily: ['YuMincho'],
-      fontWeight: 'normal',
       margin: '0 0 12px',
-    },
-    profileBody: {
-      fontFamily: ['YuMincho'],
-      fontWeight: 'normal',
     },
   }
 }

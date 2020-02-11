@@ -30,7 +30,7 @@ const menuStyle = theme => {
       backgroundColor: theme.palette.background.default,
     },
     title: {
-      ...titleStyle
+      ...titleStyle,
     },
     list: {
       color: theme.palette.primary[800],

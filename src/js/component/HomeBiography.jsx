@@ -4,7 +4,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import { style } from '../theme'
+import { theme, style } from '../theme'
 
 const customStyle = theme => {
   return {
@@ -12,7 +12,17 @@ const customStyle = theme => {
     body: {
       margin: '0 0 0 16px',
     },
-    emptyTitle: {
+    year: {
+      fontFamily: [
+        '"Helvetica Neue"',
+        theme.typography.fontFamily,
+      ].join(','),
+    },
+    emptyYear: {
+      fontFamily: [
+        '"Helvetica Neue"',
+        theme.typography.fontFamily,
+      ].join(','),
       color: '#FFFFFF',
     }
   }
@@ -23,7 +33,9 @@ const renderItem = (props, item) => {
     <div className={`${props.className}-item`}>
       <Typography
         variant='subheading'
-        className={item.isEmptyTitle ? props.classes.emptyTitle : ''}
+        className={
+          item.isEmptyTitle ? props.classes.emptyYear : props.classes.year
+        }
       >
         {item.title}
       </Typography>

@@ -11,14 +11,8 @@ export const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      'Roboto',
-      '"Noto Sans"',
-      '"Helvetica Neue"',
-      'Helvetica',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Arial',
+      '-apple-system', 'BlinkMacSystemFont', '"Helvetica Neue"',
+      '"Yu Gothic"', 'YuGothic', 'Arial',
       'sans-serif',
     ].join(','),
     display4: {
