@@ -20,7 +20,7 @@ const renderCopywrite = props => {
   return (
     <div className={`${props.className}-item`}>
       <Typography variant='title' className={props.classes.profileTitle}>
-        ひとに寄り添うエンジニアリング<br/><br/>
+        感性 × エンジニアリング<br/><br/>
       </Typography>
       <Typography variant='body2' className={props.classes.profileBody}>
         私たちの行動や暮らしは、<br/>
@@ -33,12 +33,12 @@ const renderCopywrite = props => {
         もしひとの持つ感性をエンジニアリングできたなら、<br/>
         ひとはもっと豊かに、創造的に暮らせるのではないだろうか。<br/>
         <br/>
-        鍵となるのは心の「かたち」と「うつろい」。<br/>
-        心にかたちを与えることで想いと現実の境界を融かし、<br/>
-        うつろう心を捉えることで感性の力を拡張する。<br/>
+        鍵となるのは心の形とその変化。<br/>
+        心に形を与えることで想いの機微に目を向け、<br/>
+        うつろう心を捉えることで小さな気づきに耳を澄ます。<br/>
         <br/>
-        感性に根ざしたエンジニアリングで、<br/>
-        ひとの暮らしを、もっと豊かに。<br/>
+        ひとに寄り添うエンジニアリングで、<br/>
+        暮らしをもっと豊かに。<br/>
       </Typography>
     </div>
   )
