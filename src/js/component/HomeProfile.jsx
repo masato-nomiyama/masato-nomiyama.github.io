@@ -60,7 +60,7 @@ const renderImage = props => {
         alt='Profile'
       />
       <Typography variant='body2'>
-        Creative Technologist / Artist<br/>
+        Creative Technologist / Technical Artist<br/>
       </Typography>
     </div>
   )
